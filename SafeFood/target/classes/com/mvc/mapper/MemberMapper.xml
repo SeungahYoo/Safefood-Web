@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mvc.mapper.MemberMapper">
+
+<!-- 리절트 맵 정의. primary key 컬럼은 id 태그로 표시해줌 -->
+   <resultMap type="com.mvc.vo.Member" id="MemberResult"  >
+   		<result column="id" property="id"/>
+   		<result column="name" property="name"/>
+   		<result column="address" property="address"/>
+   		<result column="tel" property="tel"/>
+   		<result column="password" property="password"/>
+   </resultMap>  
+    
+  <select id="selectAll" resultMap="MemberResult">
+  	select * from safefood.member order by name
+  </select>
+  <select id="selectOne" resultMap="MemberResult">
+  	select * from safefood.member where id=#{id}
+  </select>
+  <select id="searchAllergiesAll" resultType="String" parameterType="String">
+  	select safefood.allergy.name from safefood.member_allergies, safefood.allergy where safefood.member_allergies.id=#{id} and safefood.member_allergies.acode = safefood.allergy.acode
+  </select>
+
+  <insert id="insertMember" parameterType="Member">
+  	insert into member values(#{id},#{name},#{address},#{tel},#{password},sysdate())
+  </insert>
+  <delete id="delete" parameterType="String">
+  	delete from safefood.member where id = #{id}
+  </delete>
+  <update id="modify" parameterType="Member">
+  	update safefood.member set name=#{name},address=#{address},tel=#{tel},password=#{password},rdate=sysdate() where id=#{id}
+  </update>
+  <delete id="deleteMemberAllergies" parameterType="String">
+  	delete from safefood.member_allergies where id=#{id}
+  </delete>
+  <select id="findCode" parameterType="String" resultType="String">
+  	select acode from safefood.allergy  where name=#{allergy}
+  </select>
+  <insert id="insertMemberAllergies" parameterType="String">
+  	insert into safefood.member_allergies values(#{param1},#{param2},sysdate())
+  </insert>
+  <select id="findByName" resultMap="MemberResult" parameterType="String">
+  	select * from safefood.member where name like %#{name}%
+  </select>
+  <select id="findByAddress" resultMap="MemberResult" parameterType="String">
+  	select * from safefood.member where address like %#{address}%
+  </select>
+  <insert id="insertFood" parameterType="String">
+  	insert into safefood.member_foods (id,code,date) values(#{param1},#{param2},sysdate())
+  </insert>
+  <select id="getFoods" resultType="String" parameterType="String">
+  	select code from safefood.member_foods where id=#{id}
+  </select>
+</mapper>
+
+
+
+
+
+
+
+

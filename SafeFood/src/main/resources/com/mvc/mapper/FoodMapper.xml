@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<!-- <mapper namespace="mvc.mapper.FoodMapper"> -->
+<mapper namespace="com.mvc.mapper.FoodMapper">
+
+	<!-- ResultMap & Query tags... -->
+	<resultMap type="com.mvc.vo.Food" id="FoodResult">
+		<result column="code" property="code"/>
+		<result column="name" property="name"/>
+		<result column="maker" property="maker"/>
+		<result column="material" property="material"/>
+		<result column="image" property="image"/>
+		<result column="supportpereat" property="supportpereat"/>
+		<result column="calory" property="calory"/>
+		<result column="carbo" property="carbo"/>
+		<result column="protein" property="protein"/>
+		<result column="fat" property="fat"/>
+		<result column="sugar" property="sugar"/>
+		<result column="natrium" property="natrium"/>
+		<result column="chole" property="chole"/>
+		<result column="fattyacid" property="fattyacid"/>
+		<result column="transfat" property="transfat"/>
+	</resultMap>
+	
+	<!-- ResultMap & Query tags... -->
+	<resultMap type="com.mvc.vo.FoodBean" id="FoodBeanResult">
+		<result column="code" property="code"/>
+		<result column="name" property="name"/>
+		<result column="maker" property="maker"/>
+		<result column="material" property="material"/>
+		<result column="image" property="image"/>
+		<result column="ranking" property="count"/>
+	</resultMap>
+	
+	<select id="searchAll" resultMap="FoodResult">
+		select * from safefood.food order by name
+	</select>
+	
+	<select id="search" resultMap="FoodResult" parameterType="String">
+		select * from safefood.food where code=#{code}
+	</select>
+	
+	<select id="search2" resultMap="FoodResult" parameterType="String">
+		select * from safefood.food 
+		where name like #{param2} or 
+			  maker like #{param2} or 
+			  material like #{param2}
+			  order by name
+	</select>
+	
+	<select id="searchCount" resultType="int" parameterType="String">
+		select count(*) from safefood.member_foods.code where code=#{code}
+	</select>
+	
+	<select id="searchBest" resultMap="FoodBeanResult">
+			select *, count(*) ranking from 
+			safefood.food f right join safefood.member_foods mf 
+			on f.code = mf.code
+			group by f.code
+			order by count(*) desc
+			limit 5
+	</select>
+
+</mapper>

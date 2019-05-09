@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mvc.mapper.BoardMapper">
+
+	<!-- myBatis가 이용하는 query문장이 들어 있는 파일 java Mapper에 의해 이용됨. java Mapper - 
+		xml Mapper - myBatis java Mapper안에 있는 메소드 이름과 xml Mapper 안의 query id가 일치해야 
+		함. -->
+
+	<!-- 리절트 맵 정의. primary key 컬럼은 id 태그로 표시해줌 -->
+	<resultMap id="BoardResult" type="Board"> <!--type=Board로 만들면 일단 비어있는걸로 만들구 밑에 <result>에서 SetNum , setName, setAddress 
+			해주는거임 그래서 항상 resultMap(뒷처리) 필수 -->
+		<result column="num" property="num" /> <!--property = "num" 의 의미는 레코드 갯수 만큼 VO내부에서 list에 Cusotmer정보 하나의 객체를 계속 저장함 -->
+		<result column="name" property="name" />
+		<result column="title" property="title" />
+	</resultMap>
+
+	<select id="selectAll" resultMap="BoardResult"> <!--resultMap은 쿼리를 실행한 후에 데이터 값을(JDBC에서 WHILE문 돌리듣이) BoardResult객체가 해줄거다. -->
+		select * from Board order by wdate desc;
+	</select>
+
+	<select id="selectOne" resultMap="BoardResult"
+		parameterType="String">
+		select * from Board where num = #{num} <!-- mybatis에서는 #{num} = ? -->
+	</select>
+
+	<insert id="insert" parameterType="Board">
+		insert into Board values (
+		#{num}, #{pass}, #{name}, sysdate(), #{title}, #{content},0)
+	</insert>
+
+	<delete id="delete" parameterType="String">
+		delete from Board where num = #{num}
+	</delete>
+
+	<update id="update" parameterType="Board">
+		update Board set
+		title=#{title}, content=#{content} where num=#{num}
+	</update>
+
+	<update id="updateCount" parameterType="String">
+		update board set count =
+		count+1 where num=#{num}
+	</update>
+
+	<select id="findByTitle" resultMap="BoardResult"> <!--resultMap은 쿼리를 실행한 후에 데이터 값을(JDBC에서 WHILE문 돌리듣이) BoardResult객체가 해줄거다. -->
+		select * from Board where title like #{title} order by wdate desc;
+	</select>
+	<select id="findByName" resultMap="BoardResult"> <!--resultMap은 쿼리를 실행한 후에 데이터 값을(JDBC에서 WHILE문 돌리듣이) BoardResult객체가 해줄거다. -->
+		select * from Board where name like #{name} order by wdate desc;
+	</select>
+	
+	<select id="login" parameterType="String" resultType="int"> <!--resultMap은 쿼리를 실행한 후에 데이터 값을(JDBC에서 WHILE문 돌리듣이) BoardResult객체가 해줄거다. -->
+		select count(*) from Member where id=#{param1} and pw=#{param2};
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
