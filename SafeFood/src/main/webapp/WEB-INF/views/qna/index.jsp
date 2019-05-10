@@ -85,11 +85,18 @@
 			</tbody>
 		</table>
 
+
+
+		<%
+			if (session.getAttribute("id") != null) {
+		%>
 		<div>
 			<a class="btn btn-default float-right"> <router-link to="/insert"
 					style="color:white;">글쓰기</router-link></a>
 		</div>
-
+		<%
+			}
+		%>
 
 		<div class="flat-right">
 			<ul class="pagination center-block">

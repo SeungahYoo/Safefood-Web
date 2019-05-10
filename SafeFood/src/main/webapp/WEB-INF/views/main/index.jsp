@@ -235,7 +235,7 @@ html, body, header, .carousel {
 		// 식품 섭취 '추가'버튼 클릭 listener
 		function addFood(code, name) {
 			$.ajax({
-				url : '/safefood/addFood.mvc?code=' + code,
+				url : 'http://localhost:8080/safefood/addFood.mvc?code=' + code,
 				type : 'get',
 				success : function(result) {
 					console.log(result)

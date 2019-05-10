@@ -54,6 +54,12 @@
 			<h3 style="font-weight: bold;">Answer</h3>
 			<br>
 			<div v-if="result.answer">
+			
+				<%
+			if (session.getAttribute("id").equals("admin")) {
+		%>
+
+
 				<div
 					style="width: 950px; height: 110px; padding: 10px 20px; margin-bottom: 20px;"
 					v-html="result.answer"></div>
@@ -67,10 +73,14 @@
 				<br> <a class="btn  btn-outline-dark" @click="updateAnswer">답변
 					등록</a>
 			</div>
+					<%
+			} else {%>
+			<div
+					style="width: 950px; height: 200px; padding: 10px 20px; margin-bottom: 20px;"
+					>아직 등록된 답변이 없습니다.</div>
+		<% }%>
 		</div>
 		<div>
-
-
 			<a class="btn btn-primary"><router-link
 					:to="{name: 'update', params: { num : result.num }}"
 					style="color:white;">수정하기</router-link></a> <a class="btn btn-primary"

@@ -61,8 +61,7 @@
 	            <li class="nav-item">
 	              <a class="nav-link" href="/safefood/myfoodlist.mvc" target="_blank">내 섭취 정보</a>
 	            </li>
-            <%} %>
-          </ul>
+            <%} %></ul>
 
           <!-- Right -->
           <ul class="navbar-nav nav-flex-icons">
