@@ -259,7 +259,7 @@ html, body, header, .carousel {
 					if (result == 1) {
 						alert(name + '이(가) 추가되었습니다');
 					} else if (result == 2) {
-						alert('로그인하세요');
+						alert('로그인하세요!');
 					}
 				},
 				error : function(jqXhr, textStatus, errorThrown) {
