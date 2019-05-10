@@ -25,9 +25,9 @@ public class MemberDAOImpl implements IMemberDAO {
 	public Member selectOne(String id) {
 		Member m = mapper.selectOne(id);
 		System.out.println("MemberDaoImpl "+m.toString());
-//		if(m != null) {
-//			m.setAllergies(mapper.searchAllergiesAll(id).toArray(new String[] {}));
-//		}
+		if(m != null) {
+			m.setAllergies(mapper.searchAllergiesAll(id).toArray(new String[] {}));
+		}
 		return m;
 	}
 

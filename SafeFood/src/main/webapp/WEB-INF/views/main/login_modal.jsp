@@ -8,45 +8,40 @@
 <meta charset="utf-8">
 <title>login</title>
 <!-- SCRIPTS -->
-<!-- JQuery -->
-<script type="text/javascript" src="/main/js/jquery-3.3.1.min.js"></script>
-<!-- Bootstrap tooltips -->
-<script type="text/javascript" src="/main/js/popper.min.js"></script>
-<!-- Bootstrap core JavaScript -->
-<script type="text/javascript" src="/main/js/bootstrap.min.js"></script>
-<!-- MDB core JavaScript -->
-<script type="text/javascript" src="/main/js/mdb.min.js"></script>
 <script type="text/javascript">
 	// 로그인 버튼 클릭 listener
-	function loginClick(){
-    	var login_data= {
-        		id : $("#loginId").val(),
-            	pass : $("#loginPass").val()
-        };
+	function loginClick() {
+		var login_data = {
+			id : $("#loginId").val(),
+			pass : $("#loginPass").val()
+		};
 
-    	$.ajax({
-            type:"POST",
-            url:"/safefood/login.mvc",
-            data : login_data,
-            success:function(response){  
-                if (response == 1) { // 로그인 성공시 
-                   $("#elegantModalForm").modal("hide");
-               	alert("정상적으로 로그인되었습니다!");
-                   location.href = "/safefood/main.mvc";
-                } else { //로그인 실패시 
-                	alert("아이디나 비밀번호가 다릅니다.");
-                }
-            },
-            error:function(xhr, status, error) {
-                console.log(xhr.status + " : " + error + " : " + xhr.responseText);
-            }
-        });
-    }
-    </script>
+		$.ajax({
+			type : "POST",
+			url : "/safefood/login.mvc",
+			data : login_data,
+			success : function(response) {
+				if (response == 1) { // 로그인 성공시 
+					$("#elegantModalForm").modal("hide");
+					alert("정상적으로 로그인되었습니다!");
+					console.log("I'm ok");
+					location.href = "/safefood/main.mvc";
+					console.log("I'm still ok");
+				} else { //로그인 실패시 
+					alert("아이디나 비밀번호가 다릅니다.");
+				}
+			},
+			error : function(xhr, status, error) {
+				console.log(xhr.status + " : " + error + " : "
+						+ xhr.responseText);
+			}
+		});
+	}
+</script>
 </head>
 <body>
-<!-- ########################################## 로그인 모달 ########################################## -->
-	
+	<!-- ########################################## 로그인 모달 ########################################## -->
+
 	<div class="modal fade" id="elegantModalForm" tabindex="-1"
 		role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog" role="document">
@@ -68,26 +63,27 @@
 					<!--Body-->
 					<div class="warning"></div>
 					<div class="md-form mb-5">
-						<input type="text" name = "id" id="loginId" class="form-control validate">
-						<label data-error="wrong" data-success="right" for="Form-email1">Your
-							ID</label>
+						<input type="text" name="id" id="loginId"
+							class="form-control validate"> <label data-error="wrong"
+							data-success="right" for="Form-email1">Your ID</label>
 					</div>
 					<div class="md-form pb-3">
-						<input type="password" name = "pass" id="loginPass"
+						<input type="password" name="pass" id="loginPass"
 							class="form-control validate"> <label data-error="wrong"
 							data-success="right" for="Form-pass1">Your password</label>
 						<p class="font-small blue-text d-flex justify-content-end">
-							<a href="#" class="blue-text ml-1" data-dismiss="modal" data-toggle="modal"
-                            data-target="#findIDPW">Forgot password?</a>
+							<a href="#" class="blue-text ml-1" data-dismiss="modal"
+								data-toggle="modal" data-target="#findIDPW">Forgot password?</a>
 						</p>
 					</div>
-				<div class="modal-footer mx-5 pt-3 mb-1">
-					 <button class="btn btn-lg btn-primary btn-block" id="btnLogin" onclick="loginClick()">login</button>
-				</div>
-					
+					<div class="modal-footer mx-5 pt-3 mb-1">
+						<button class="btn btn-lg btn-primary btn-block" id="btnLogin"
+							onclick="loginClick()">login</button>
+					</div>
+
 				</div>
 				<!--Footer-->
-				
+
 				<div class="modal-footer mx-5 pt-3 mb-1">
 					<p class="font-small grey-text d-flex justify-content-end">
 						Not a member? <a href="#" class="blue-text ml-1"
