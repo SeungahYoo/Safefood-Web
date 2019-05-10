@@ -7,9 +7,11 @@
 <head>
 <meta charset="utf-8">
 <title>register</title>
+
+</style>
 </head>
 <body>
-<!-- ########################################## 회원가입 모달  ########################################## -->
+	<!-- ########################################## 회원가입 모달  ########################################## -->
 	<div class="modal fade" id="modalRegisterForm" tabindex="-1"
 		role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog" role="document">
@@ -60,67 +62,128 @@
 									class="form-control validate"> <label
 									data-error="wrong" data-success="right" for="orangeForm-pass">알레르기</label>
 							</div>
-							<div>
-								<input type="checkbox" id="대두" name="allergies" value="대두"
-									checked> <label for="대두">대두</label>
-							</div>
-							<div>
-								<input type="checkbox" id="땅콩" name="allergies" value="땅콩"
-									checked> <label for="땅콩">땅콩</label>
-							</div>
-							<div>
-								<input type="checkbox" id="우유" name="allergies" value="우유"
-									checked> <label for="우유">우유</label>
-							</div>
-							<div>
-								<input type="checkbox" id="게" name="allergies" value="게" checked>
-								<label for="게">게</label>
-							</div>
-							<div>
-								<input type="checkbox" id="새우" name="allergies" value="새우"
-									checked> <label for="새우">새우</label>
-							</div>
-							<div>
-								<input type="checkbox" id="참치" name="allergies" value="참치"
-									checked> <label for="참치">참치</label>
-							</div>
-							<div>
-								<input type="checkbox" id="연어" name="allergies" value="연어"
-									checked> <label for="연어">연어</label>
-							</div>
-							<div>
-								<input type="checkbox" id="쑥" name="allergies" value="쑥" checked>
-								<label for="쑥">쑥</label>
-							</div>
-							<div>
-								<input type="checkbox" id="소고기" name="allergies" value="소고기"
-									checked> <label for="소고기">소고기</label>
-							</div>
-							<div>
-								<input type="checkbox" id="닭고기" name="allergies" value="닭고기"
-									checked> <label for="닭고기">닭고기</label>
-							</div>
-							<div>
-								<input type="checkbox" id="돼지고기" name="allergies" value="돼지고기"
-									checked> <label for="돼지고기">돼지고기</label>
-							</div>
-							<div>
-								<input type="checkbox" id="복숭아" name="allergies" value="복숭아"
-									checked> <label for="복숭아">복숭아</label>
-							</div>
-							<div>
-								<input type="checkbox" id="민들레" name="allergies" value="민들레"
-									checked> <label for="민들레">민들레</label>
-							</div>
-							<div>
-								<input type="checkbox" id="계란흰자" name="allergies" value="계란흰자"
-									checked> <label for="계란흰자">계란흰자</label>
-							</div>
+							<center>
+							<table style="width:400px">
+								<tr>
+									<td>
+										<div class="custom-control custom-checkbox">
+											<input type="checkbox" class="custom-control-input" id="대두"
+												name="allergies" value="대두" checked> <label
+												class="custom-control-label" for="대두">대두</label>
+										</div>
+									</td>
+									<td>
+										<div class="custom-control custom-checkbox">
+											<input type="checkbox" class="custom-control-input" id="땅콩"
+												name="allergies" value="땅콩" checked> <label
+												class="custom-control-label" for="땅콩">땅콩</label>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="custom-control custom-checkbox">
+											<input type="checkbox" class="custom-control-input" id="우유"
+												name="allergies" value="우유" checked> <label
+												class="custom-control-label" for="우유">우유</label>
+										</div>
+									</td>
+									<td>
+										<div class="custom-control custom-checkbox">
+											<input type="checkbox" class="custom-control-input" id="게"
+												name="allergies" value="게" checked> <label
+												class="custom-control-label" for="게">게</label>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="custom-control custom-checkbox">
+											<input type="checkbox" class="custom-control-input" id="새우"
+												name="allergies" value="새우" checked> <label
+												class="custom-control-label" for="새우">새우</label>
+										</div>
+									</td>
+									<td>
+										<div class="custom-control custom-checkbox">
+											<input type="checkbox" class="custom-control-input" id="참치"
+												name="allergies" value="참치" checked> <label
+												class="custom-control-label" for="참치">참치</label>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td><div class="custom-control custom-checkbox"> <input
+										type="checkbox" class="custom-control-input" id="연어"
+										name="allergies" value="연어" checked> <label
+										class="custom-control-label" for="연어">연어</label>
+										</div>
+									</td>
+									<td>
+										<div class="custom-control custom-checkbox">
+											<input type="checkbox" class="custom-control-input" id="쑥"
+												name="allergies" value="쑥" checked> <label
+												class="custom-control-label" for="쑥">쑥</label>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="custom-control custom-checkbox">
+											<input type="checkbox" class="custom-control-input" id="소고기"
+												name="allergies" value="소고기" checked> <label
+												class="custom-control-label" for="소고기">소고기</label>
+										</div>
+									</td>
+									<td>
+										<div class="custom-control custom-checkbox">
+											<input type="checkbox" class="custom-control-input" id="닭고기"
+												name="allergies" value="닭고기" checked> <label
+												class="custom-control-label" for="닭고기">닭고기</label>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="custom-control custom-checkbox">
+											<input type="checkbox" class="custom-control-input" id="돼지고기"
+												name="allergies" value="돼지고기" checked> <label
+												class="custom-control-label" for="돼지고기">돼지고기</label>
+										</div>
+									</td>
+									<td>
+										<div class="custom-control custom-checkbox">
+											<input type="checkbox" class="custom-control-input" id="복숭아"
+												name="allergies" value="복숭아" checked> <label
+												class="custom-control-label" for="복숭아">복숭아</label>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="custom-control custom-checkbox">
+											<input type="checkbox" class="custom-control-input" id="민들레"
+												name="allergies" value="민들레" checked> <label
+												class="custom-control-label" for="민들레">민들레</label>
+										</div>
+									</td>
+									<td>
+										<div class="custom-control custom-checkbox">
+											<input type="checkbox" class="custom-control-input" id="계란흰자"
+												name="allergies" value="계란흰자" checked> <label
+												class="custom-control-label" for="계란흰자">계란흰자</label>
+										</div>
+									</td>
+								</tr>
+
+							</table>
+							</center>
 						</div>
 					</div>
 					<div class="modal-footer d-flex justify-content-center">
 						<input type="submit" class="btn btn-deep-orange" value="Signup">
-						<input type="text" name="Signup" value="Signup" style="display: none">
+						<input type="text" name="Signup" value="Signup"
+							style="display: none">
 					</div>
 				</div>
 			</form>
