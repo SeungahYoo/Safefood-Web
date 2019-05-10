@@ -151,7 +151,7 @@ html, body, header, .carousel {
 						<hr>
 						<a target="_black" class="addFood btn btn-blue btn-md" onclick="addFood(${f.code},'${f.name}')"> <i
                             class="fas fa-download ml-1"></i>추가
-                        </a> <a target="_black" class=" btn btn-blue btn-md"> <i
+                        </a> <a target="_black" class=" btn btn-blue btn-md" onclick="jjimFood(${f.code},'${f.name}')"> <i
 							class="fas fa-download ml-1"></i>찜
 						</a>
 					</div>
@@ -236,6 +236,23 @@ html, body, header, .carousel {
 		function addFood(code, name) {
 			$.ajax({
 				url : 'http://localhost:8080/safefood/addFood.mvc?code=' + code,
+				type : 'get',
+				success : function(result) {
+					console.log(result)
+					if (result == 1) {
+						alert(name + '이(가) 추가되었습니다');
+					} else if (result == 2) {
+						alert('로그인하세요');
+					}
+				},
+				error : function(jqXhr, textStatus, errorThrown) {
+					console.log(errorThrown);
+				}
+			});
+		}
+		function jjimFood(code, name) {
+			$.ajax({
+				url : 'http://localhost:8080/safefood/jjiFood.mvc?code=' + code,
 				type : 'get',
 				success : function(result) {
 					console.log(result)
