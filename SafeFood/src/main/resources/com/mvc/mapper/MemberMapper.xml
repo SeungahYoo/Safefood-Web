@@ -25,7 +25,7 @@
   </select>
 
   <insert id="insertMember" parameterType="Member">
-  	insert into member values(#{id},#{name},#{address},#{tel},#{password},sysdate())
+  	insert into safefood.member values(#{id},#{name},#{address},#{tel},#{password},sysdate())
   </insert>
   <delete id="delete" parameterType="String">
   	delete from safefood.member where id = #{id}

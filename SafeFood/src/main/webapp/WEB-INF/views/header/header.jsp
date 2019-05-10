@@ -40,24 +40,34 @@ html, body, header, .carousel {
 
 @media ( min-width : 800px) and (max-width: 850px) {
 	.navbar
+	
+	
 	:not
+	
 		
+	
 	(
 	.top-nav-collapse
 	
+	
 	 
+	
 	){
 	background-color
-	:
-	#929FBA
-	;
 	
-	 	
+	
+	:
+	
+	
+	#929FBA
+	
+	
+	;
 	!
 	important
+	
+	
 	;
-	
-	
 }
 }
 </style>
@@ -105,6 +115,15 @@ html, body, header, .carousel {
 					%>
 					<li class="nav-item"><a class="nav-link"
 						href="/safefood/myfoodlist.mvc" target="_blank">내 섭취 정보</a></li>
+					<%
+						}
+					%>
+
+					<%
+						if (session.getAttribute("id") != null) {
+					%>
+					<li class="nav-item"><a class="nav-link" data-toggle="modal"
+						data-target="#modalCart" target="_blank">찜목록</a></li>
 					<%
 						}
 					%>
