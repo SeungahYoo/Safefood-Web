@@ -48,6 +48,38 @@
 			</tbody>
 
 		</table>
+
+		<div
+			style="width: 95%; height: 300px; background-color: #ebf0fa; padding: 25px; margin: 30px;">
+			<h3 style="font-weight: bold;">Answer</h3>
+			<br>
+			<div v-if="result.answer">
+			
+				<%
+			if (session.getAttribute("id").equals("admin")) {
+		%>
+
+
+				<div
+					style="width: 950px; height: 110px; padding: 10px 20px; margin-bottom: 20px;"
+					v-html="result.answer"></div>
+				<a class="btn  btn-outline-dark" @click="deleteAnswer">답변 삭제</a>
+
+			</div>
+			<div v-else>
+
+				<textarea rows="5" cols="105" v-model="answer"
+					style="margin-left: 20px;"></textarea>
+				<br> <a class="btn  btn-outline-dark" @click="updateAnswer">답변
+					등록</a>
+			</div>
+					<%
+			} else {%>
+			<div
+					style="width: 950px; height: 200px; padding: 10px 20px; margin-bottom: 20px;"
+					>아직 등록된 답변이 없습니다.</div>
+		<% }%>
+		</div>
 		<div>
 			<a class="btn btn-primary"><router-link
 					:to="{name: 'update', params: { num : result.num }}"
@@ -55,45 +87,6 @@
 				@click="deleteQuestion">삭제</a> <a href="notice.mvc"
 				class="btn btn-light">게시판으로</a>
 		</div>
-		<div
-			style="width: 95%; height: 300px; background-color: #ebf0fa; padding: 25px; margin: 30px;">
-			<h3 style="font-weight: bold;">Answer</h3>
-			<br>
-			<div v-if="result.answer">
-				<div
-					style="width: 950px; height: 110px; padding: 10px 20px; margin-bottom: 20px;"
-					v-html="result.answer"></div>
-				<%
-					if (session.getAttribute("id").equals("admin")) {
-				%>
-				<a class="btn  btn-outline-dark" @click="deleteAnswer">답변 삭제</a>
-				<%
-					}
-				%>
-			</div>
-			<div v-else>
-				<!-- 답변이 없을때 -->
-				<%
-					if (session.getAttribute("id").equals("admin")) {
-				%>
-
-				<textarea rows="5" cols="105" v-model="answer"
-					style="margin-left: 20px;"></textarea>
-				<br> <a class="btn  btn-outline-dark" @click="updateAnswer">답변
-					등록</a>
-			</div>
-			<%
-				} else {
-			%>
-
-			<div
-				style="width: 950px; height: 200px; padding: 10px 20px; margin-bottom: 20px;">아직
-				등록된 답변이 없습니다.</div>
-			<%
-				}
-			%>
-		</div>
-
 
 	</div>
 
