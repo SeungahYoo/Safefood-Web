@@ -127,4 +127,27 @@ public class MainController {
 	    model.addAttribute("mainList", list);
 		return "foodlist/foodBest";
 	}
+	@RequestMapping(value = "/myjjimlist.mvc", method = RequestMethod.GET)
+	public String myJJimList(Model model, HttpSession session) {
+		// session에 사용자 정보가 존재하는지 확인
+        String id = (String) session.getAttribute("id");
+        // 사용자 정보가 존재할 경우
+        if (id != null) {
+        	// 사용자 섭취 목록 반환
+        	List<String> codes = mservice.getJJim(id);	
+        	// 섭취 목록 코드에 따라 Food 정보 목록 추출
+        	List<Food> list = new ArrayList<Food>();
+        	
+        	for(String code : codes) {
+        		list.add(service.search(code));
+        	}
+        	// 사용자가 추가한 식품정보 목록 세팅
+        	
+        	model.addAttribute("jjimlist", list);
+        	System.out.println("MODAL");
+        	System.out.println(list);
+    		return "main/index";
+        }
+		return "main/index";
+	}
 }

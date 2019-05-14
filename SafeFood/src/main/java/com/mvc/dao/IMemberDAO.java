@@ -70,4 +70,9 @@ public interface IMemberDAO {
      * @param id 회원 아이디
      */
     public List<String> getFoods(String id);
+    
+    public void insertJJim (String id, String code);
+    
+    public List<String> getJJim(String id);
+
 }

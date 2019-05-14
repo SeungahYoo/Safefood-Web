@@ -54,6 +54,13 @@
   <select id="getFoods" resultType="String" parameterType="String">
   	select code from safefood.member_foods where id=#{id}
   </select>
+  <insert id="insertJJim" parameterType="String">
+  	insert into safefood.member_jjim (id,code,date) values(#{param1},#{param2},sysdate())
+  </insert>
+  <select id="getJJim" resultType="String" parameterType="String">
+  	select code from safefood.member_jjim where id=#{id}
+  </select>
+  
 </mapper>
 
 

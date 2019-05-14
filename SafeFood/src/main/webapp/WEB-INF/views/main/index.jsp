@@ -203,21 +203,22 @@ html, body, header, .carousel {
      <jsp:include page="modify_modal.jsp"></jsp:include><!-- 회원관리 모달 -->
      <jsp:include page="withdraw_confirm_modal.jsp"></jsp:include><!-- 회원탈퇴 확인 모달 -->
      <jsp:include page="findIDPW.jsp"></jsp:include>
+     <jsp:include page="jjim_modal.jsp"></jsp:include>
      <!-- ########################## Modal part end ########################## -->
 
 	<!-- SCRIPTS -->
 	<!-- JQuery -->
 	<script type="text/javascript"
-		src="resources/js/jquery-3.3.1.min.js"></script>
+		src="/safefood/resources/js/jquery-3.3.1.min.js"></script>
 	<!-- Bootstrap tooltips -->
 	<script type="text/javascript"
-		src="resources/js/popper.min.js"></script>
+		src="/safefood/resources/js/popper.min.js"></script>
 	<!-- Bootstrap core JavaScript -->
 	<script type="text/javascript"
-		src="resources/js/bootstrap.min.js"></script>
+		src="/safefood/resources/js/bootstrap.min.js"></script>
 	<!-- MDB core JavaScript -->
 	<script type="text/javascript"
-		src="resources/js/mdb.min.js"></script>
+		src="/safefood/resources/js/mdb.min.js"></script>
 	<!-- Initializations -->
 	<script type="text/javascript">
 		$(document).ready(function() {
@@ -252,7 +253,7 @@ html, body, header, .carousel {
 		}
 		function jjimFood(code, name) {
 			$.ajax({
-				url : 'http://localhost:8080/safefood/jjiFood.mvc?code=' + code,
+				url : 'http://localhost:8080/safefood/jjimFood.mvc?code=' + code,
 				type : 'get',
 				success : function(result) {
 					console.log(result)

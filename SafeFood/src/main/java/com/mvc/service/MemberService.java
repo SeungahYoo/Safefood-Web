@@ -74,4 +74,10 @@ public interface MemberService {
      * @return 회원 섭취 식품 코드 목록
      */
     public List<String> getFoods(String id);
+    
+    public void insertJJim (String id, String code);
+    
+    public List<String> getJJim(String id);
+
+
 }

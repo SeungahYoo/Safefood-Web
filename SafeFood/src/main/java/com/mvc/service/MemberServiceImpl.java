@@ -74,4 +74,15 @@ public class MemberServiceImpl implements MemberService{
         return dao.getFoods(id);
     }
 
+	@Override
+	public void insertJJim(String id, String code) {
+		dao.insertJJim(id, code);
+	}
+
+	@Override
+	public List<String> getJJim(String id) {
+		
+		return dao.getJJim(id);
+	}
+
 }

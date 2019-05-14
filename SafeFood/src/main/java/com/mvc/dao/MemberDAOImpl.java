@@ -25,9 +25,9 @@ public class MemberDAOImpl implements IMemberDAO {
 	public Member selectOne(String id) {
 		Member m = mapper.selectOne(id);
 		System.out.println("MemberDaoImpl "+m.toString());
-//		if(m != null) {
-//			m.setAllergies(mapper.searchAllergiesAll(id).toArray(new String[] {}));
-//		}
+		if(m != null) {
+			m.setAllergies(mapper.searchAllergiesAll(id).toArray(new String[] {}));
+		}
 		return m;
 	}
 
@@ -85,6 +85,16 @@ public class MemberDAOImpl implements IMemberDAO {
 	public List<String> getFoods(String id) {
 	
 		return mapper.getFoods(id);
+	}
+
+	@Override
+	public void insertJJim(String id, String code) {
+		mapper.insertJJim(id, code);
+	}
+
+	@Override
+	public List<String> getJJim(String id) {
+		return mapper.getJJim(id);
 	}
 }
 
