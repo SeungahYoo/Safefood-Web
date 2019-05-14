@@ -66,17 +66,10 @@
           <!-- Right -->
           <ul class="navbar-nav nav-flex-icons">
 					 <% if(session.getAttribute("id") == null){ %>
-                       <li style="padding:3px"class="nav-item"><a
-                           class="nav-link border border-light rounded"  
-                           data-toggle="modal" data-target="#elegantModalForm"> 로그인 </a></li>
-
-                       <li style="padding:3px" class="nav-item">
-                           <div class="text-center">
-                               <a class="nav-link border border-light rounded"
-                                     data-toggle="modal"
-                                   data-target="#modalRegisterForm2"> 회원조회 </a>
-                           </div>
-                       </li>
+  			<li style="padding: 3px" class="nav-item"><a
+						class="nav-link border border-light rounded" data-toggle="modal"
+						data-target="#elegantModalForm"> 로그인 </a></li>
+    
                       <%}else{ %>
                       <li style="padding:3px" class="nav-item">
                            <div class="text-center">
