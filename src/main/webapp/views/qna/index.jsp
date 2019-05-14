@@ -197,7 +197,7 @@
      methods:{
      	allQuestions: function(){
      		axios
-     		.get('http://localhost:9092/qna') //요청
+     		.get('http://localhost:8080/qna') //요청
      		.then(response => (this.result = response.data))
      		console.log(this.result)
      		
@@ -226,14 +226,14 @@
 		 detailQuestion: function(){
 			 console.log("methods"+this.num)
 	    		axios
-	     		.get('http://localhost:9092/qna/'+this.num) //요청
+	     		.get('http://localhost:8080/qna/'+this.num) //요청
 	     		.then(response => (this.result = response.data))
 	     	 console.log("result="+this.answer)
 		 },
 		
 		 deleteQuestion:function(){
 			 axios
-	     		.delete('http://localhost:9092/qna/'+this.num)//요청
+	     		.delete('http://localhost:8080/qna/'+this.num)//요청
 	     		.then(res => {
 	     			alert('질문이 삭제되었습니다.');
 	     			router.push('/');
@@ -243,7 +243,7 @@
 		 updateAnswer:function(){
 			 console.log(this.answer)
 			 axios
-	     		.put('http://localhost:9092/qna/'+this.num+'/'+this.answer)//요청
+	     		.put('http://localhost:8080/qna/'+this.num+'/'+this.answer)//요청
 	     		.then(res => {
 	     			alert('답변이 추가되었습니다.');
 	     			this.detailQuestion();
@@ -254,7 +254,7 @@
 		 deleteAnswer:function(){
 			 console.log(this.title)
 			 axios
-	     		.put('http://localhost:9092/qna/'+this.num+'/null')//요청
+	     		.put('http://localhost:8080/qna/'+this.num+'/null')//요청
 	     		.then(res => {
 	     			alert('답변이 삭제되었습니다.');
 	     			this.answer=null;
@@ -279,8 +279,9 @@
 	 },
 	 methods:{
 		 insertProcess: function(){
+			 console.log("insertProcess methods");
 			 axios
-     		.post('http://localhost:9092/qna',
+     		.post('http://localhost:8080/qna',
      				{id:this.id, title:this.title, question:this.question})//요청
      		.then(res => {
      			alert('질문이 추가되었습니다.');
@@ -313,14 +314,14 @@
 		 detailQuestion: function(){
 			 console.log("methods"+this.num)
 	    		axios
-	     		.get('http://localhost:9092/qna/'+this.num) //요청
+	     		.get('http://localhost:8080/qna/'+this.num) //요청
 	     		.then(response => (this.result = response.data))
 	     		console.log(this.result)
 		 },
 		 updateProcess: function(){
 			 console.log(this.question)
 			 axios
-     		.put('http://localhost:9092/qna',
+     		.put('http://localhost:8080/qna',
      				{num:this.num, title:this.result.title, question:this.result.question, answer:this.result.answer})//요청
      		.then(res => {
      			alert('질문이 수정되었습니다.');
