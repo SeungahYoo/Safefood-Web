@@ -4,7 +4,10 @@ HELP.md
 
 ### STS ###
 .apt_generated
+.classpath
 .factorypath
+.project
+.settings
 .springBeans
 .sts4-cache
 
@@ -24,5 +27,3 @@ HELP.md
 
 ### VS Code ###
 .vscode/
-
-/.metadata/
