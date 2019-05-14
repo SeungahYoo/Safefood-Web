@@ -15,15 +15,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.mvc.service.QnAService;
 import com.mvc.vo.QnA;
 
-
-@CrossOrigin(origins = { "*" }, maxAge = 6000)
 @RestController
 public class QnAController {
-
 	@Autowired
 	QnAService service;
 
-	// http://localhost:7070/rest/customers
 	@RequestMapping(value = "/qna", method = RequestMethod.GET) // ���� �ڹٷ� �������� �ʴ� json���� �ٲ�� �Ҷ���
 																// response.body������̼� �߰��ؾ餤��.
 	public List<QnA> allQnA() {

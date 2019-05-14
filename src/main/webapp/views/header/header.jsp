@@ -83,7 +83,7 @@ html, body, header, .carousel {
 			<!-- Brand -->
 			<img class="image" alt="ssafy" src="resources/img/ssafy_logo.png"
 				style="width: 60px; heigh: 60px"> <a class="navbar-brand"
-				href="main.mvc" target="_blank"> </a>
+				href="main.mvc"  > </a>
 
 			<!-- Collapse -->
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -102,19 +102,19 @@ html, body, header, .carousel {
 						href="main.mvc">메 인 <span class="sr-only">(current)</span>
 					</a></li>
 					<li class="nav-item"><a class="nav-link" href="notice.mvc"
-						target="_blank">공지 사항</a></li>
+						 >공지 사항</a></li>
 					<li class="nav-item"><a class="nav-link" href="list.mvc"
-						target="_blank">식품 목록</a></li>
+						 >식품 목록</a></li>
 					<li class="nav-item"><a class="nav-link" href="foodBest.mvc"
-						target="_blank">베스트 섭취량 정보</a></li>
+						 >베스트 섭취량 정보</a></li>
 
 					<li class="nav-item"><a class="nav-link" href="qna.mvc"
-						target="_blank">Q&A</a></li>
+						 >Q&A</a></li>
 					<%
 						if (session.getAttribute("id") != null) {
 					%>
 					<li class="nav-item"><a class="nav-link"
-						href="/myfoodlist.mvc" target="_blank">내 섭취 정보</a></li>
+						href="/myfoodlist.mvc"  >내 섭취 정보</a></li>
 					<%
 						}
 					%>
@@ -123,7 +123,7 @@ html, body, header, .carousel {
 						if (session.getAttribute("id") != null) {
 					%>
 					<li class="nav-item"><a class="nav-link" data-toggle="modal"
-						data-target="#modalCart" target="_blank">찜목록</a></li>
+						data-target="#modalCart"  >찜목록</a></li>
 					<%
 						}
 					%>
@@ -135,12 +135,12 @@ html, body, header, .carousel {
 						if (session.getAttribute("id") == null) {
 					%>
 					<li style="padding: 3px" class="nav-item"><a
-						class="nav-link border border-light rounded" target="_blank"
+						class="nav-link border border-light rounded"  
 						data-toggle="modal" data-target="#elegantModalForm"> 로그인 </a></li>
 
 					<li style="padding: 3px" class="nav-item">
 						<div class="text-center">
-							<a class="nav-link border border-light rounded" target="_blank"
+							<a class="nav-link border border-light rounded"  
 								data-toggle="modal" data-target="#modalRegisterForm2"> 회원조회
 							</a>
 						</div>
@@ -150,14 +150,14 @@ html, body, header, .carousel {
 					%>
 					<li style="padding: 3px" class="nav-item">
 						<div class="text-center">
-							<a class="nav-link border border-light rounded" target="_blank"
+							<a class="nav-link border border-light rounded"  
 								data-toggle="modal" data-target="#modalRegisterForm3"> 정보수정
 							</a>
 						</div>
 					</li>
 					<li style="padding: 3px" class="nav-item"><a
 						href="/logout.mvc"
-						class="nav-link border border-light rounded" target="_blank">
+						class="nav-link border border-light rounded"  >
 							로그아웃 </a></li>
 					<%
 						}

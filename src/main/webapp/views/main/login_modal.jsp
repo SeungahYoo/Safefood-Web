@@ -11,8 +11,7 @@
 <script type="text/javascript">
 	// 로그인 버튼 클릭 listener
 	function loginClick() {
-		alert('hello');
-		console.log('hello');
+
 		var login_data = {
 			id : $("#loginId").val(),
 			pass : $("#loginPass").val()
