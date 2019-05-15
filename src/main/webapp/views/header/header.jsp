@@ -123,7 +123,7 @@ html, body, header, .carousel {
 						if (session.getAttribute("id") != null) {
 					%>
 					<li class="nav-item"><a class="nav-link" data-toggle="modal"
-						data-target="#modalCart" target="_blank">찜목록</a></li>
+						data-target="#modalCart" onclick="updateJJimList();" target="_blank">찜목록</a></li>
 					<%
 						}
 					%>

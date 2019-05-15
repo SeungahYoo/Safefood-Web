@@ -2,6 +2,8 @@ package com.mvc.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,18 +22,26 @@ public class JJimRestController {
 	JJimService service;
 
 	@RequestMapping(value = "/jjim", method = RequestMethod.GET)
-	public List<JJim> allCustomers() {
-		System.out.println("sdassd");
-		List<JJim> a = service.selectAll();
-		for (int i = 0; i < a.size(); i++) {
-			System.out.println(a.get(i).getName());
-		}
+	public List<JJim> alljjim(HttpSession session) {
+		String id = (String) session.getAttribute("id");
+		
+		
+		List<JJim> a = service.selectAll(id);
+		
+//		for (int i = 0; i < a.size(); i++) {
+//			if(a.get(i)==null) continue;
+//			System.out.println(a.get(i).toString());
+//		}
 
 		return a;
 	}
 
-	@RequestMapping(value = "/jjim/{code}", method = RequestMethod.DELETE)
-	public void deleteCustomer(@PathVariable String code) {
+	@RequestMapping(value = "/jjim/{name}", method = RequestMethod.DELETE)
+	public void deleteCustomer(@PathVariable String name) {
+		
+		
+		String code = service.findbyName(name);
+		
 		service.delete(code);
 
 	}

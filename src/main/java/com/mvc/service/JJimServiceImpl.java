@@ -18,13 +18,23 @@ public class JJimServiceImpl implements JJimService{
 	@Transactional
 	
 	@Override
-	public List<JJim> selectAll() {
-		return dao.selectAll();
+	public List<JJim> selectAll(String id) {
+		return dao.selectAll(id);
 	}
 
 	@Override
 	public void delete(String code) {
 		dao.delete(code);
+	}
+
+	@Override
+	public String findbyName(String name) {
+		return dao.findbyName(name);
+	}
+
+	@Override
+	public JJim findNutrition(String code) {
+		return dao.findNutrition(code);
 	}
 
 }

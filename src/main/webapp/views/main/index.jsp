@@ -151,7 +151,7 @@ html, body, header, .carousel {
 						<hr>
 						<a target="_black" class="addFood btn btn-blue btn-md" onclick="addFood(${f.code},'${f.name}')"> <i
                             class="fas fa-download ml-1"></i>추가
-                        </a> <a target="_black" class=" btn btn-blue btn-md" onclick="jjimFood(${f.code},'${f.name}')"> <i
+                        </a> <a target="_black" class=" btn btn-blue btn-md" onclick="jjimFood(${f.code},'${f.name}')" @click="allJJimList"> <i
 							class="fas fa-download ml-1"></i>찜
 						</a>
 					</div>
