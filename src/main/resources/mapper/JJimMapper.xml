@@ -18,14 +18,16 @@
 	</resultMap> -->
 
 	<select id="selectAll" resultType="JJim"> <!--resultMap은 쿼리를 실행한 후에 데이터 값을(JDBC에서 WHILE문 돌리듣이) JJimResult객체가 해줄거다. -->
-		select f.name name from safefood.food f right join safefood.member_jjim m on f.code = m.code;
+		select f.name name from safefood.food f join safefood.member_jjim m on f.code=m.code where m.id=#{id}
 	</select>
 
 	<delete id="delete" parameterType="String">
 		delete from safefood.member_jjim where code = #{code}
 	</delete>
 	
-	
+	<select id="findbyName" resultType="String"> <!--resultMap은 쿼리를 실행한 후에 데이터 값을(JDBC에서 WHILE문 돌리듣이) JJimResult객체가 해줄거다. -->
+		select code from safefood.food where name=#{name}
+	</select>
 
 
 

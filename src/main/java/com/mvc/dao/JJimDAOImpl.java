@@ -14,13 +14,23 @@ public class JJimDAOImpl implements JJimDAO{
 	JJimMapper mapper;
 	
 	@Override
-	public List<JJim> selectAll() {
-		return mapper.selectAll();
+	public List<JJim> selectAll(String id) {
+		return mapper.selectAll(id);
 	}
 
 	@Override
 	public void delete(String code) {
 		mapper.delete(code);
+	}
+
+	@Override
+	public String findbyName(String name) {
+		return mapper.findbyName(name);
+	}
+
+	@Override
+	public JJim findNutrition(String code) {
+		return mapper.findNutrition(code);
 	}
 
 }
