@@ -49,24 +49,37 @@
 
 		</table>
 
+		<div>
+
+			<template v-if="isMine"> <a class="btn btn-primary"><router-link
+					:to="{name: 'update', params: { num : result.num }}"
+					style="color:white;">수정</router-link></a> <a class="btn btn-primary"
+				@click="deleteQuestion">삭제</a> </template>
+
+			<a href="notice.mvc" class="btn btn-light">게시판으로</a>
+		</div>
+
 		<div
 			style="width: 95%; height: 300px; background-color: #ebf0fa; padding: 25px; margin: 30px;">
 			<h3 style="font-weight: bold;">Answer</h3>
 			<br>
-			<div v-if="result.answer">	<!-- TODO 여기 에러 있다!!! -->
+			<div v-if="result.answer">
 				<%
-					if (session.getAttribute("id").equals("admin")) {
+					String id = (String) session.getAttribute("id");
+					if (id != null && id.equals("admin")) {
 				%>
-
-
 				<div
 					style="width: 950px; height: 110px; padding: 10px 20px; margin-bottom: 20px;"
 					v-html="result.answer"></div>
 				<a class="btn  btn-outline-dark" @click="deleteAnswer">답변 삭제</a>
-
+				<%
+					}
+				%>
 			</div>
-			<div v-else>
-
+			<template v-else> <!-- 등록된 답변이 없을 때 --> <%
+ 	if (id != null && id.equals("admin")) {
+ %>
+			<div>
 				<textarea rows="5" cols="105" v-model="answer"
 					style="margin-left: 20px;"></textarea>
 				<br> <a class="btn  btn-outline-dark" @click="updateAnswer">답변
@@ -75,26 +88,20 @@
 			<%
 				} else {
 			%>
-			<div
-				style="width: 950px; height: 200px; padding: 10px 20px; margin-bottom: 20px;">아직
-				등록된 답변이 없습니다.</div>
+			<div>등록된 답변이 없습니다.</div>
 			<%
 				}
-			%>
+			%> </template>
+
+
+
 		</div>
-		<div>
-			<a class="btn btn-primary"><router-link
-					:to="{name: 'update', params: { num : result.num }}"
-					style="color:white;">수정하기</router-link></a> <a class="btn btn-primary"
-				@click="deleteQuestion">삭제</a> <a href="notice.mvc"
-				class="btn btn-light">게시판으로</a>
-		</div>
+
 
 	</div>
 
 
 	</main> </template>
-
 
 </body>
 </html>

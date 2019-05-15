@@ -77,15 +77,12 @@ public class MemberController {
 
 	@RequestMapping(value = "/login.mvc", method = RequestMethod.POST)
     public void login(HttpSession session, Model model, String id, String pass, HttpServletResponse response) throws ServletException, IOException {
-      
+		System.out.println("here is login controller");
 		// 서비스를 통한 회원 정보 조회
         Member check = memberService.selectOne(id);
-       
         // 존재하는 회원이고 비밀번호가 일치할 경우
         if(check != null && pass.equals(check.getPassword())) {
-        	// session에 정보 세팅
-        	
-        	//System.out.println("session만들어지나느"+id);
+        	// session에 정보 세팅        	
             session.setAttribute("id", id);
             session.setAttribute("m", check);
             model.addAttribute("mainList", foodService.searchAll());
@@ -107,7 +104,6 @@ public class MemberController {
             String message = "아이디 또는 패스워드가 다릅니다.";
             model.addAttribute("str", message);
             model.addAttribute("mainList", foodService.searchAll());
-            response.getWriter().println("1");
         }
     }
 

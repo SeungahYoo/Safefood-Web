@@ -120,57 +120,8 @@
 	<jsp:include page="insert.jsp"></jsp:include>
 	<jsp:include page="update.jsp"></jsp:include>
 	<!--Main layout-->
-	<!--Footer-->
-	<footer class="page-footer text-center font-small mt-4 wow fadeIn">
+	<jsp:include page="../header/footer.jsp"></jsp:include>
 
-		<!--Call to action-->
-		<div class="pt-4">
-			<a class="btn btn-outline-white"
-				href="https://mdbootstrap.com/docs/jquery/getting-started/download/"
-				target="_blank" role="button">Download MDB <i
-				class="fas fa-download ml-2"></i>
-			</a> <a class="btn btn-outline-white"
-				href="https://mdbootstrap.com/education/bootstrap/" target="_blank"
-				role="button">Start free tutorial <i
-				class="fas fa-graduation-cap ml-2"></i>
-			</a>
-		</div>
-		<!--/.Call to action-->
-
-		<hr class="my-4">
-
-		<!-- Social icons -->
-		<div class="pb-4">
-			<a href="https://www.facebook.com/mdbootstrap" target="_blank"> <i
-				class="fab fa-facebook-f mr-3"></i>
-			</a> <a href="https://twitter.com/MDBootstrap" target="_blank"> <i
-				class="fab fa-twitter mr-3"></i>
-			</a> <a href="https://www.youtube.com/watch?v=7MUISDJ5ZZ4"
-				target="_blank"> <i class="fab fa-youtube mr-3"></i>
-			</a> <a href="https://plus.google.com/u/0/b/107863090883699620484"
-				target="_blank"> <i class="fab fa-google-plus-g mr-3"></i>
-			</a> <a href="https://dribbble.com/mdbootstrap" target="_blank"> <i
-				class="fab fa-dribbble mr-3"></i>
-			</a> <a href="https://pinterest.com/mdbootstrap" target="_blank"> <i
-				class="fab fa-pinterest mr-3"></i>
-			</a> <a href="https://github.com/mdbootstrap/bootstrap-material-design"
-				target="_blank"> <i class="fab fa-github mr-3"></i>
-			</a> <a href="http://codepen.io/mdbootstrap/" target="_blank"> <i
-				class="fab fa-codepen mr-3"></i>
-			</a>
-		</div>
-		<!-- Social icons -->
-
-		<!--Copyright-->
-		<div class="footer-copyright py-3">
-			© 2019 Copyright: <a
-				href="https://mdbootstrap.com/education/bootstrap/" target="_blank">
-				MDBootstrap.com </a>
-		</div>
-		<!--/.Copyright-->
-
-	</footer>
-	
 	<script src="https://unpkg.com/vue"></script>
 	<script src="https://unpkg.com/axios/dist/axios.min.js">
 
@@ -197,7 +148,7 @@
      methods:{
      	allQuestions: function(){
      		axios
-     		.get('http://localhost:9092/qna') //요청
+     		.get('http://localhost:8080/qna') //요청
      		.then(response => (this.result = response.data))
      		console.log(this.result)
      		
@@ -213,27 +164,40 @@
 			 num:'',
 			 answer:'',
 			 title:'',
-			 question:''
+			 question:'',
+			 sessionid : '${id}'
 		 }
 	 },
 	 mounted() {
 		 this.num = this.$route.params.num
-		 console.log(this.num)
+		 console.log(this.id)
 		 this.detailQuestion();
 		 
 	 },
+	 computed:{
+		 isLogin:function(){
+			return(this.sessionid != null); 
+		 },
+		 isMine:function(){
+			 console.log(this.result.id+" sisson: "+this.sessionid);
+		
+			 return (this.result.id == this.sessionid);
+		 }
+	 },
 	 methods:{
+	
+		 
 		 detailQuestion: function(){
 			 console.log("methods"+this.num)
 	    		axios
-	     		.get('http://localhost:9092/qna/'+this.num) //요청
+	     		.get('http://localhost:8080/qna/'+this.num) //요청
 	     		.then(response => (this.result = response.data))
 	     	 console.log("result="+this.answer)
 		 },
 		
 		 deleteQuestion:function(){
 			 axios
-	     		.delete('http://localhost:9092/qna/'+this.num)//요청
+	     		.delete('http://localhost:8080/qna/'+this.num)//요청
 	     		.then(res => {
 	     			alert('질문이 삭제되었습니다.');
 	     			router.push('/');
@@ -241,9 +205,8 @@
 		 },
 		 
 		 updateAnswer:function(){
-			 console.log(this.answer)
 			 axios
-	     		.put('http://localhost:9092/qna/'+this.num+'/'+this.answer)//요청
+	     		.put('http://localhost:8080/qna/'+this.num+'/'+this.answer)//요청
 	     		.then(res => {
 	     			alert('답변이 추가되었습니다.');
 	     			this.detailQuestion();
@@ -254,7 +217,7 @@
 		 deleteAnswer:function(){
 			 console.log(this.title)
 			 axios
-	     		.put('http://localhost:9092/qna/'+this.num+'/null')//요청
+	     		.put('http://localhost:8080/qna/'+this.num+'/null')//요청
 	     		.then(res => {
 	     			alert('답변이 삭제되었습니다.');
 	     			this.answer=null;
@@ -279,8 +242,9 @@
 	 },
 	 methods:{
 		 insertProcess: function(){
+			 console.log("insertProcess methods");
 			 axios
-     		.post('http://localhost:9092/qna',
+     		.post('http://localhost:8080/qna',
      				{id:this.id, title:this.title, question:this.question})//요청
      		.then(res => {
      			alert('질문이 추가되었습니다.');
@@ -313,14 +277,14 @@
 		 detailQuestion: function(){
 			 console.log("methods"+this.num)
 	    		axios
-	     		.get('http://localhost:9092/qna/'+this.num) //요청
+	     		.get('http://localhost:8080/qna/'+this.num) //요청
 	     		.then(response => (this.result = response.data))
 	     		console.log(this.result)
 		 },
 		 updateProcess: function(){
 			 console.log(this.question)
 			 axios
-     		.put('http://localhost:9092/qna',
+     		.put('http://localhost:8080/qna',
      				{num:this.num, title:this.result.title, question:this.result.question, answer:this.result.answer})//요청
      		.then(res => {
      			alert('질문이 수정되었습니다.');
