@@ -32,6 +32,7 @@ public class FoodDAOImpl implements FoodDAO {
 
 	@Override
 	public List<Food> search(String condition, String word) {
+		mapper.insertSearchHistory(word);
 		return mapper.search2(condition, "%" + word + "%");
 	}
 
@@ -53,6 +54,11 @@ public class FoodDAOImpl implements FoodDAO {
 	@Override
 	public int searchCount(String code) {
 		return mapper.searchCount(code);
+	}
+
+	@Override
+	public List<String> searchHistoryList() {
+		return mapper.searchHistoryList();
 	}
 
 }

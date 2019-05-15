@@ -21,34 +21,17 @@ public class BoardController {
 	@Autowired
 	BoardService bservice;
 
+
 	@RequestMapping(value = "notice.mvc", method = RequestMethod.GET)
 	public String index(Model model) { // ���̺���� ��� ������ �˻��ؼ� ����
+
 		List<Board> list = bservice.selectAll();
 		model.addAttribute("list", list);
 		return "board/index";
 	}
 
-//	@RequestMapping(value = "loginProcess.mvc", method = RequestMethod.POST)
-//	public String loginProcess(HttpSession session, String id, String pass) { // ���̺���� ��� ������ �˻��ؼ� ����
-//		System.out.println(id);
-//		int ret = bservice.login(id, pass);
-//		if (ret >= 1) {
-//			session.setAttribute("id", id);
-//		} else {
-//			System.out.println("�α��� ����");
-//		}
-//		return "redirect:/index.mvc";
-//	}
-//
-//	@RequestMapping(value = "logout.mvc", method = RequestMethod.GET)
-//	public String logout(HttpSession session) { // ���̺���� ��� ������ �˻��ؼ� ����
-//		session.setAttribute("id", null);
-//		// session.setAttribute("id", id);
-//		return "redirect:/index.mvc";
-//	}
 
 	@RequestMapping(value = "read.mvc", method = RequestMethod.GET)
-//	public String detail(Model model, String num) {//���̺���� ��� ������ �˻��ؼ� �������ش�.
 	public String detail(Model model, @RequestParam(value = "num") String number) {// ���̺���� ��� ������ �˻��ؼ� �������ش�.
 		Board b = bservice.selectOne(number);
 		model.addAttribute("b", b);

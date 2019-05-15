@@ -34,4 +34,6 @@ public interface FoodService {
 	 * @return 찜 또는 추가가 가장 많은 식품 정보 index 목록
 	 */
 	public List<Food> searchBestIndex();
+	
+	public List<String> searchHistoryList();
 }

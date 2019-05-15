@@ -48,4 +48,9 @@ public class FoodServiceImpl implements FoodService{
 		return dao.search(code);
 	}
 
+	@Override
+	public List<String> searchHistoryList() {
+		return dao.searchHistoryList();
+	}
+
 }

@@ -22,6 +22,10 @@
 <!-- Your custom styles (optional) -->
 <link href="resources/css/style.min.css" rel="stylesheet">
 <style type="text/css">
+body {
+	padding-right: 0 !important
+}
+
 html, body, header, .carousel {
 	height: 60vh;
 }
@@ -40,23 +44,35 @@ html, body, header, .carousel {
 
 @media ( min-width : 800px) and (max-width: 850px) {
 	.navbar
+	
+	
 	:not
+	
 		
+	
 	(
 	.top-nav-collapse
 	
 	
+	
+	
 	){
 	background
+	
+	
 	:
+	
+	
 	#929FBA
+	
 		
 		
+	
 	!
 	important
+	
+	
 	;
-	
-	
 }
 }
 </style>
@@ -66,6 +82,7 @@ html, body, header, .carousel {
 
 	<header>
 		<jsp:include page="../header/header.jsp" />
+
 		<!--Carousel Wrapper-->
 		<div style="position: relative;">
 
@@ -123,11 +140,14 @@ html, body, header, .carousel {
 					<p class="mb-4 d-none d-md-block">
 						<strong>Made by Dongik & Geuntae & Seungah.</strong>
 					</p>
-
 					<div class="md-form" style="margin: 0px auto; width: 500px">
 						<input type="text" id="mainSearch" class="form-control"
 							style="color: white; width: 500px;"> <label
 							for="mainSearch" style="color: white;">식품 검색</label>
+
+
+						<a data-toggle="modal"
+							data-target="#HistoryModal" style="font-size: 6px;" onclick="searchHistory()" >검색어 랭킹보기</a>
 					</div>
 
 				</div>
@@ -138,7 +158,6 @@ html, body, header, .carousel {
 	<!--Main layout-->
 	<main>
 	<div class="container">
-
 		<!--Section: Main info-->
 		<section class="mt-5 wow fadeIn" id="mainList">
 			<c:forEach items="${mainList}" var="f">
@@ -155,10 +174,12 @@ html, body, header, .carousel {
 						<hr>
 						<p>${f.material}</p>
 						<hr>
-						<a target="_black" class="addFood btn btn-blue btn-md" onclick="addFood(${f.code},'${f.name}')"> <i
-                            class="fas fa-download ml-1"></i>추가
-                        </a> <a target="_black" class=" btn btn-blue btn-md" onclick="jjimFood(${f.code},'${f.name}')" @click="allJJimList"> <i
-							class="fas fa-download ml-1"></i>찜
+						<a target="_black" class="addFood btn btn-blue btn-md"
+							onclick="addFood(${f.code},'${f.name}')"> <i
+							class="fas fa-download ml-1"></i>추가
+						</a> <a target="_black" class=" btn btn-blue btn-md"
+							onclick="jjimFood(${f.code},'${f.name}')" @click="allJJimList">
+							<i class="fas fa-download ml-1"></i>찜
 						</a>
 					</div>
 				</div>
@@ -182,6 +203,7 @@ html, body, header, .carousel {
 	<jsp:include page="withdraw_confirm_modal.jsp"></jsp:include><!-- 회원탈퇴 확인 모달 -->
 	<jsp:include page="findIDPW.jsp"></jsp:include>
 	<jsp:include page="jjim_modal.jsp"></jsp:include>
+	<jsp:include page="history_modal.jsp"></jsp:include>
 	<!-- ########################## Modal part end ########################## -->
 
 	<!-- SCRIPTS -->

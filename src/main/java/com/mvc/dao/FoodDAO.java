@@ -50,4 +50,6 @@ public interface FoodDAO {
 	 */
 	public int searchCount(String code);
 	
+	public List<String> searchHistoryList();
+	
 }
