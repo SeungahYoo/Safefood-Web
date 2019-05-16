@@ -62,11 +62,11 @@
 									</button></td>
 							</tr>
 							</c:forEach> --%>
-
+							
 								<tr v-for="(food, idx) in result">
+								
 									<td v-text="idx + 1"></td>
-									<td v-text="food.name"><a
-										:href="'/detail.mvc?code=' + food.code"></a></td>
+									<td><a :href="'/detail.mvc?code=' + food.code" v-text="food.name"></a></td>
 									<td><button type="button" class="close" aria-label="Close">
 											<span aria-hidden="true" @click="deleteJJim(food.name)">×</span>
 										</button></td>
@@ -80,7 +80,7 @@
 					<div class="modal-footer">
 						<button type="button" class="btn btn-outline-primary"
 							data-dismiss="modal">Close</button>
-						<button class="btn btn-primary" ><a href="/myjjimdetail.mvc">상세보기</a></button>
+						<button class="btn btn-outline-primary" ><a href="/myjjimdetail.mvc">상세보기</a></button>
 					</div>
 				</div>
 			</div>
@@ -96,6 +96,7 @@
 				return{
 					result:[], 
 					name:'',
+					code:''
 				}
 			}, // end of datea
 			mounted(){

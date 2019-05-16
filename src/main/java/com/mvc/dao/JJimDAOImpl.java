@@ -33,4 +33,5 @@ public class JJimDAOImpl implements JJimDAO{
 		return mapper.findNutrition(code);
 	}
 
+	
 }

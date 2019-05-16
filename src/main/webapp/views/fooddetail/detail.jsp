@@ -236,6 +236,7 @@
      <jsp:include page="../main/modify_modal.jsp"></jsp:include><!-- 회원관리 모달 -->
      <jsp:include page="../main/withdraw_confirm_modal.jsp"></jsp:include><!-- 회원탈퇴 확인 모달 -->
      <jsp:include page="../main/findIDPW.jsp"></jsp:include>
+     <jsp:include page="../main/jjim_modal.jsp"></jsp:include>
      <!-- ########################## Modal part end ########################## -->
 <!-- SCRIPTS -->
 <!-- JQuery -->

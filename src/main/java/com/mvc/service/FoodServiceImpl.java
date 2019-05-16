@@ -48,4 +48,9 @@ public class FoodServiceImpl implements FoodService{
 		return dao.search(code);
 	}
 
+	@Override
+	public Food searchName(String name) {
+		return dao.searchName(name);
+	}
+
 }

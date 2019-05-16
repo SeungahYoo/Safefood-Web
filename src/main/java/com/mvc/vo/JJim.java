@@ -46,6 +46,18 @@ public class JJim {
 		this.total_fattyacid = total_fattyacid;
 		this.total_transfat = total_transfat;
 	}
+	
+
+	public JJim(double total_calory, double total_carbo, double total_protein, double total_fat, double total_sugar,
+			double total_natrium) {
+		super();
+		this.total_calory = total_calory;
+		this.total_carbo = total_carbo;
+		this.total_protein = total_protein;
+		this.total_fat = total_fat;
+		this.total_sugar = total_sugar;
+		this.total_natrium = total_natrium;
+	}
 
 	public String getName() {
 		return name;

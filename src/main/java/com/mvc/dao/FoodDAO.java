@@ -49,5 +49,6 @@ public interface FoodDAO {
 	 * @return 전체 사용자 섭취 횟수
 	 */
 	public int searchCount(String code);
+	public Food searchName(String name);
 	
 }

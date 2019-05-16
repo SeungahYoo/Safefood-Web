@@ -9,4 +9,5 @@ public interface JJimDAO {
 	public void delete(String code);
 	public String findbyName(String name);
 	public JJim findNutrition(String code);
+	
 }

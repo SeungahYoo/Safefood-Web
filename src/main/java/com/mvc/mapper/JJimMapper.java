@@ -9,4 +9,5 @@ public interface JJimMapper {
 	public void delete(String name);
 	public String findbyName(String name);
 	public JJim findNutrition(String code);
+	
 }

@@ -34,13 +34,22 @@
      <h1>내 찜 정보</h1>
 
       <hr class="my-5">
+      <canvas id="polarChart"></canvas>
+     	 <input type="text" style="display: none;" value="${totaln.total_calory}" id="calory">
+         <input type="text" style="display: none;" value="${totaln.total_carbo}" id="carbo">
+         <input type="text" style="display: none;" value="${totaln.total_protein}" id="protein">
+         <input type="text" style="display: none;" value="${totaln.total_fat}" id="fat">
+         <input type="text" style="display: none;" value="${totaln.total_sugar}" id="sugar">
+         <input type="text" style="display: none;" value="${totaln.total_natrium}" id="natrium">
+      
+      <hr class="my-5">
 
       <!--Section: Cards-->
      <div class="container">
-
+		
 		<!--Section: Main info-->
-		<section class="mt-5 wow fadeIn" id="mainList">
-			<c:forEach items="${mainList}" var="f">
+		<section class="mt-5 wow fadeIn" id="jjimlist">
+			<c:forEach items="${jjimlist}" var="f">
 				<div class="row">
 					<div class="col-md-4 mb-2">
 						<img src="resources/${f.image}" class="img-fluid z-depth-1-half">
@@ -143,6 +152,7 @@
      <jsp:include page="modify_modal.jsp"></jsp:include><!-- 회원관리 모달 -->
      <jsp:include page="withdraw_confirm_modal.jsp"></jsp:include><!-- 회원탈퇴 확인 모달 -->
      <jsp:include page="findIDPW.jsp"></jsp:include>
+     <jsp:include page="jjim_modal.jsp"></jsp:include>
      <!-- ########################## Modal part end ########################## -->
 <!-- SCRIPTS -->
 <!-- JQuery -->
@@ -157,7 +167,44 @@
   <script type="text/javascript">
     // Animations initialization
     new WOW().init();
+    //polar
+    $(document).ready(function(){
+  	  var NUTR_CONT1 = $("#calory").val(); // 칼로리
+  		var NUTR_CONT2 = $("#carbo").val(); // 탄수화물
+  		var NUTR_CONT3 = $("#protein").val(); // 단백질
+  		var NUTR_CONT4 = $("#fat").val(); // 지방
+  		var NUTR_CONT5 = $("#sugar").val(); // 당류
+  		var NUTR_CONT6 = $("#natrium").val(); // 나트륨
+  		makePolarChart(NUTR_CONT1,NUTR_CONT2,NUTR_CONT3,NUTR_CONT4,NUTR_CONT5,NUTR_CONT6);
+    });
+    function makePolarChart(NUTR_CONT1,NUTR_CONT2,NUTR_CONT3,NUTR_CONT4,NUTR_CONT5,NUTR_CONT6){
+    
+    
+    var ctxPA = document.getElementById("polarChart").getContext('2d');
+    var myPolarChart = new Chart(ctxPA, {
+      type: 'polarArea',
+      data: {
+        labels: ["칼로리", "탄수화물", "단백질", "지방", "나트륨", "당류"],
+        datasets: [{
+          data: [NUTR_CONT1, NUTR_CONT2, NUTR_CONT3, NUTR_CONT4, NUTR_CONT6, NUTR_CONT5],
+          backgroundColor: ["rgba(219, 0, 0, 0.1)", "rgba(0, 165, 2, 0.1)", "rgba(255, 195, 15, 0.2)",
+            "rgba(55, 59, 66, 0.1)", "rgba(0, 0, 0, 0.3)"
+          ],
+          hoverBackgroundColor: ["rgba(219, 0, 0, 0.2)", "rgba(0, 165, 2, 0.2)",
+            "rgba(255, 195, 15, 0.3)", "rgba(55, 59, 66, 0.1)", "rgba(0, 0, 0, 0.4)"
+          ]
+        }]
+      },
+      options: {
+        responsive: true
+      }
+    });
+    }
   </script>
+
+  
+  
+  
 </body>
 
 </html>

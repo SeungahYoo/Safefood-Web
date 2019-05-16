@@ -12,9 +12,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.mvc.service.FoodService;
+import com.mvc.service.JJimService;
 import com.mvc.service.MemberService;
 import com.mvc.vo.Food;
 import com.mvc.vo.FoodBean;
+import com.mvc.vo.JJim;
 import com.mvc.vo.Member;
 
 @Controller
@@ -23,6 +25,8 @@ public class MainController {
 	FoodService service;
 	@Autowired
     MemberService mservice;
+	@Autowired
+	JJimService jservice;
 
 	/*public MainController() {
 		foodService = FoodServiceImpl.getInstance(); // singleton
@@ -134,18 +138,61 @@ public class MainController {
         if (id != null) {
         	// 사용자 섭취 목록 반환
         	List<String> codes = mservice.getJJim(id);	
+        	
         	// 섭취 목록 코드에 따라 Food 정보 목록 추출
         	List<Food> list = new ArrayList<Food>();
-        	
         	for(String code : codes) {
         		list.add(service.search(code));
         	}
         	// 사용자가 추가한 식품정보 목록 세팅
+        	double total_calory = 0.0;
+        	double total_carbo = 0.0;
+        	double total_protein = 0.0;
+        	double total_fat = 0.0;
+        	double total_sugar = 0.0;
+        	double total_natrium = 0.0;
         	
+        	
+        	for (int i = 0; i < list.size(); i++) {
+        		total_calory += list.get(i).getCalory();
+        		total_carbo += list.get(i).getCarbo();
+        		total_protein += list.get(i).getProtein();
+        		total_fat += list.get(i).getFat();
+        		total_sugar += list.get(i).getSugar();
+        		total_natrium += list.get(i).getNatrium();
+			}
+        	JJim totaln = new JJim(total_calory, total_carbo, total_protein, total_fat, total_sugar, total_natrium);
+        	
+        	model.addAttribute("totaln", totaln);
         	model.addAttribute("jjimlist", list);
         	
     		return "main/my_jjim_Detail";
         }
 		return "main/index";
 	}
+	
+	@RequestMapping(value = "/detailjjim.mvc", method = RequestMethod.GET)
+	public String detailjjim(HttpSession session, Model model, String name) {
+		// 조회할 식품 코드 정보 추출
+		// 음식 상세 정보 세팅
+		Food food = service.searchName(name);
+		model.addAttribute("foods", food);
+		// 사용자가 존재할시 알레르기 정보 표시
+		Member m = (Member)session.getAttribute("m");
+		if(m != null) {
+			// 알레르기 목록 세팅
+			StringBuilder sb = new StringBuilder();
+			if(m.getAllergies() != null) {
+				for(String allergy : m.getAllergies()) {
+					if(food.getMaterial().contains(allergy)) {
+						sb.append(allergy + " ");
+					}
+				}
+				food.setAllergy(sb.toString());
+			}
+		}
+		return "fooddetail/detail";
+	}
+
+	
 }

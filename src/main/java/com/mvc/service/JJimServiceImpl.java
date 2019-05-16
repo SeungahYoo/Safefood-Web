@@ -37,4 +37,6 @@ public class JJimServiceImpl implements JJimService{
 		return dao.findNutrition(code);
 	}
 
+	
+
 }

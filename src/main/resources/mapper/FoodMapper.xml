@@ -64,5 +64,9 @@
 			order by count(*) desc
 			limit 5
 	</select>
+	
+	<select id="searchName" resultMap="FoodResult" parameterType="String">
+		select * from safefood.food where name=#{name}
+	</select>
 
 </mapper>

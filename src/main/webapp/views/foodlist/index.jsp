@@ -57,8 +57,11 @@
 					 		<div class="card-body">
 					 			<h4 class="card-title">${f.name}</h4>
 					 			<p class="card-text"> ${f.material}</p>
-					 			<a target="_blank" class="btn btn-blue btn-md">추가<i class="fas fa-download ml-2"></i></a>
-					 			<a target="_blank" class="btn btn-blue btn-md">찜<i class="fas fa-download ml-2"></i></a>
+					 			<a target="_black" class="addFood btn btn-blue btn-md" onclick="addFood(${f.code},'${f.name}')"> <i
+                            class="fas fa-download ml-1"></i>추가
+                        </a> <a target="_black" class=" btn btn-blue btn-md" onclick="jjimFood(${f.code},'${f.name}')" @click="allJJimList"> <i
+							class="fas fa-download ml-1"></i>찜
+						</a>
 					 		</div>
 					 	</div>
 					 </div>
@@ -145,6 +148,7 @@
      <jsp:include page="../main/modify_modal.jsp"></jsp:include><!-- 회원관리 모달 -->
      <jsp:include page="../main/withdraw_confirm_modal.jsp"></jsp:include><!-- 회원탈퇴 확인 모달 -->
      <jsp:include page="../main/findIDPW.jsp"></jsp:include>
+     <jsp:include page="../main/jjim_modal.jsp"></jsp:include>
      <!-- ########################## Modal part end ########################## -->
 <!-- SCRIPTS -->
 <!-- JQuery -->
@@ -159,6 +163,40 @@
   <script type="text/javascript">
     // Animations initialization
     new WOW().init();
+    function addFood(code, name) {
+		$.ajax({
+			url : 'http://localhost:8080/addFood.mvc?code=' + code,
+			type : 'get',
+			success : function(result) {
+				console.log(result)
+				if (result == 1) {
+					alert(name + '이(가) 추가되었습니다');
+				} else if (result == 2) {
+					alert('로그인하세요');
+				}
+			},
+			error : function(jqXhr, textStatus, errorThrown) {
+				console.log(errorThrown);
+			}
+		});
+	}
+	function jjimFood(code, name) {
+		$.ajax({
+			url : 'http://localhost:8080/jjimFood.mvc?code=' + code,
+			type : 'get',
+			success : function(result) {
+				console.log(result)
+				if (result == 1) {
+					alert(name + '이(가) 추가되었습니다');
+				} else if (result == 2) {
+					alert('로그인하세요!');
+				}
+			},
+			error : function(jqXhr, textStatus, errorThrown) {
+				console.log(errorThrown);
+			}
+		});
+	}
   </script>
 </body>
 

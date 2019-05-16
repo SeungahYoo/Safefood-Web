@@ -55,6 +55,11 @@ public class FoodDAOImpl implements FoodDAO {
 		return mapper.searchCount(code);
 	}
 
+	@Override
+	public Food searchName(String name) {
+		return mapper.searchName(name);
+	}
+
 }
 /*
  * class MysqlAdapter { // url(jdbc url) // jdbc:protocol 이름, mysql : db이름,

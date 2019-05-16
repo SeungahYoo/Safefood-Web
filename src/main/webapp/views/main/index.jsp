@@ -125,11 +125,11 @@ html, body, header, .carousel {
 					</p>
 
 					<div class="md-form" style="margin: 0px auto; width: 500px">
-						<input type="text" id="mainSearch" class="form-control"
-							style="color: white; width: 500px;"> <label
-							for="mainSearch" style="color: white;">식품 검색</label>
+						<input type="search" id="mainSearch" class="form-control "	style="color: white; width: 500px;">
+						
+					<label for="mainSearch" class="active" style="color: white;">식품 검색</label>
 					</div>
-
+					
 				</div>
 			</div>
 		</div>
@@ -185,19 +185,21 @@ html, body, header, .carousel {
 	<!-- ########################## Modal part end ########################## -->
 
 	<!-- SCRIPTS -->
-	<!-- JQuery -->
-	<script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
-	<!-- Bootstrap tooltips -->
-	<script type="text/javascript" src="/js/popper.min.js"></script>
-	<!-- Bootstrap core JavaScript -->
-	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
-	<!-- MDB core JavaScript -->
-	<script type="text/javascript" src="/js/mdb.min.js"></script>
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.1/js/mdb.min.js"></script>
 	<!-- Initializations -->
 	<script type="text/javascript">
 		$(document).ready(function() {
 			// Animations initialization
 			new WOW().init();
+			
+			
 			// 식품 검색 기능
 			$('#mainSearch').keydown(function(key) {
 				if (key.keyCode == 13) {
@@ -242,6 +244,7 @@ html, body, header, .carousel {
 				}
 			});
 		}
+		
 	</script>
 </body>
 

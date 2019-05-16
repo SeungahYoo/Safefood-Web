@@ -61,7 +61,16 @@
 	            <li class="nav-item">
 	              <a class="nav-link" href="/myfoodlist.mvc"  >내 섭취 정보</a>
 	            </li>
-            <%} %></ul>
+            <%} %>
+            <%
+						if (session.getAttribute("id") != null) {
+					%>
+					<li class="nav-item"><a class="nav-link" data-toggle="modal"
+						data-target="#modalCart" onclick="updateJJimList();">찜목록</a></li>
+					<%
+						}
+					%>
+			</ul>
 
           <!-- Right -->
           <ul class="navbar-nav nav-flex-icons">
