@@ -52,7 +52,37 @@ html, body, header, .carousel {
 	
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	:not
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
@@ -62,8 +92,38 @@ html, body, header, .carousel {
 	
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	(
 	.top-nav-collapse
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
@@ -84,7 +144,47 @@ html, body, header, .carousel {
 	
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	:
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
@@ -98,14 +198,54 @@ html, body, header, .carousel {
 	
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 		
 		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
 	
 	!
 	important
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
@@ -210,20 +350,50 @@ html, body, header, .carousel {
 	<main>
 	<div class="container">
 		<!--Section: Main info-->
-		<section class="mt-5 wow fadeIn">
-			<div style="border:1px solid black; display: inline-block; width: 450px;">
-				<h4>Notice</h4>
-				공지사항을 여기에
-			</div>
+		<section class="mt-5 wow fadeIn" style="display: table;">
+			<div style="display: table-row;">
+				<div
+					style="display: table-cell; border-left: 3px solid #d9d9d9; width: 780px; height: 245px; padding: 10px;">
+					<h4
+						style="font-weight: bold; margin-bottom: 20px; display: inline-block;">Notice</h4>
+					<a style="font-size: 12px;">&nbsp;더보기 ></a>
+					<table style="display: clear; width: 640px; margin: 2px 20px;">
+						<c:forEach items="${noticeList}" var="n" begin="0" end="4">
+							<tr>
+								<td height="40">[공지] ${n.title }</td>
+								<td style="text-align: right; font-size: 12px; color: gray;">${n.wdate }</td>
+							</tr>
+						</c:forEach>
+					</table>
+				</div>
 
-			<div style="display: inline-block; width: 450px;">
-				<h4>New Food !</h4>
-				안녕!
+				<div
+					style="display: table-cell; border: 3px solid #d9d9d9; width: 300px; height: 245px; padding: 20px;">
+					<h4
+						style="font-weight: bold; margin-bottom: 10px; font-style: italic;">New
+						Food !</h4>
+
+
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item">맛있는 우유GT&nbsp;&nbsp;<span
+							class="badge badge-pill badge-success">Organic</span></li>
+						<li class="list-group-item">메로나</li>
+						<li class="list-group-item">비타500 칼슘&nbsp;&nbsp;<span
+							class="badge badge-pill badge-primary">추천</span></li>
+						<li class="list-group-item">비비빅&nbsp;&nbsp;<span
+							class="badge badge-pill badge-success">Organic</span></li>
+
+					</ul>
+
+				</div>
 			</div>
 		</section>
-		
-		<section class="mt-5 wow fadeIn" id="mainList" >
-			<c:forEach items="${mainList}" var="f">
+		<br> <br> <br>
+		<section class="mt-5 wow fadeIn" id="mainList">
+			<h4
+				style="font-weight: bold; margin-bottom: 20px; display: inline-block;">식품목록</h4>
+			<a style="font-size: 12px;">&nbsp;더보기 ></a> <br>
+			<c:forEach items="${mainList}" begin="0" end="3" var="f">
 				<div class="row">
 					<div class="col-md-4 mb-2">
 						<img src="resources/${f.image}" class="img-fluid z-depth-1-half" >
@@ -266,6 +436,38 @@ html, body, header, .carousel {
 		<!--Section: Main info-->
 
 		<hr class="my-5">
+
+		<section style="margin-bottom: 50px;">
+			<div style="display: table; margin: 0px 30px;">
+				<div style="display: table-row;">
+					<div
+						style="display: table-cell; padding: 10px 20px 20px 0px; width: 520px; height: 330px;">
+						<h5 style="font-weight: bold; font-style: italic; color: #808080;">Check on
+							Youtube!</h5>
+						<div class="embed-responsive embed-responsive-16by9">
+							<iframe class="embed-responsive-item"
+								src="https://www.youtube.com/embed/v64KOxKVLVg" allowfullscreen></iframe>
+						</div>
+
+					</div>
+					<div style="display: table-cell; padding: 10px 0px 20px 20px; width: 497px;">
+						<h5 style="font-weight: bold;">오시는 길</h5>
+						서울특별시 강남구 역삼동 테헤란로 212
+						<!--Google map-->
+						<div id="map-container-google-2"
+							class="z-depth-1-half map-container" style="height: 235px;">
+							<iframe
+								src="https://maps.google.com/maps?q=chicago&t=&z=13&ie=UTF8&iwloc=&output=embed"
+								frameborder="0" style="border: 0; height: 235px; width: 468px;"
+								allowfullscreen></iframe>
+						</div>
+
+						<!--Google Maps-->
+
+					</div>
+				</div>
+			</div>
+		</section>
 
 	</div>
 	</main>
