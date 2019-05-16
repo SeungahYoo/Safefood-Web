@@ -34,7 +34,7 @@
 	<div class="container">
 
 		<h1>내 섭취 정보</h1>
-
+		
 		<hr class="my-5">
 
 		<!--Section: Cards-->
