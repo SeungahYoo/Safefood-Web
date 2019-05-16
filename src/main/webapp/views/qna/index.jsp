@@ -36,7 +36,7 @@
 
 	<!--Main layout-->
 	<template id="questiontemplate"> <main class="mt-5 pt-4">
-	<div class="container dark-grey-text mt-5">
+	<div class="container dark-grey-text mt-5" style="margin-bottom: 150px;">
 		<h1>Q & A</h1>
 		<hr>
 

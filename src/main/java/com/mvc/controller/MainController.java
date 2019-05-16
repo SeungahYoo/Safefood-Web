@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.mvc.service.FoodService;
 import com.mvc.service.JJimService;
@@ -57,7 +58,16 @@ public class MainController {
 		model.addAttribute("type", "search");
 		return "main/index";
 	}
-
+	
+	@RequestMapping(value = "/searchHistory.mvc", method = RequestMethod.GET)
+	@ResponseBody
+	public List<String> searchHistory(Model model) { // 검색히스토리
+		List<String> list = service.searchHistoryList();
+		System.out.println(list+"searchHistory controller");
+		//model.addAttribute("historyList", list);
+		return list;
+	}
+	
 	@RequestMapping(value = "/detail.mvc", method = RequestMethod.GET)
 	public String detail(HttpSession session, Model model, String code) {
 		// 조회할 식품 코드 정보 추출

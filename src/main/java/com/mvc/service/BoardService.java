@@ -15,4 +15,5 @@ public interface BoardService {
 	public List<Board> findByTitle(String title);
 	public List<Board> findByName(String Name);
 	public int login(String id, String pw);
+
 }

@@ -28,7 +28,7 @@
 	<!--Main layout-->
 	<main class="mt-5 pt-4">
 
-	<div class="container dark-grey-text mt-5">
+	<div class="container dark-grey-text mt-5" style="margin-bottom: 200px;">
 		<h1>NOTICE</h1>
 		<hr>
 		<div class="float-right">

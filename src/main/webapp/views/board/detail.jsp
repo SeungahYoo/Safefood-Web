@@ -26,7 +26,7 @@
 	<jsp:include page="../header/header2.jsp" />
 	<!--Main layout-->
 	<main class="mt-5 pt-4">
-	<div class="container dark-grey-text mt-5">
+	<div class="container dark-grey-text mt-5" style="margin-bottom: 150px;">
 		<table class="table">
 
 			<thead>
@@ -42,9 +42,9 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr height="100">
+				<tr style="height: 350px;">
 					<td><strong style="font-weight: bold; font-size: 15px">내용</strong></td>
-					<td colspan="6">${b.content}</td>
+					<td colspan="6" >${b.content}</td>
 				</tr>
 			</tbody>
 

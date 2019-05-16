@@ -19,7 +19,7 @@
 <body>
 	<template id="detailtemplate"> <main class="mt-5 pt-4">
 	<!-- 상세페이지 -->
-	<div class="container dark-grey-text mt-5">
+	<div class="container dark-grey-text mt-5" style="margin-bottom: 200px; ">
 
 		<table class="table">
 

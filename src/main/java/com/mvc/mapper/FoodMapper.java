@@ -49,5 +49,12 @@ public interface FoodMapper {
 	 * @return 전체 사용자 섭취 횟수
 	 */
 	public int searchCount(String code);
+<<<<<<< HEAD
 	public Food searchName(String name);
+=======
+	
+	public List<String> searchHistoryList();
+	
+	public void insertSearchHistory(String word);
+>>>>>>> a9e2ad7f6964f23daa95c229351b4ce3ebf14953
 }

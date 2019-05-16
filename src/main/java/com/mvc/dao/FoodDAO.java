@@ -51,4 +51,6 @@ public interface FoodDAO {
 	public int searchCount(String code);
 	public Food searchName(String name);
 	
+	public List<String> searchHistoryList();
+	
 }

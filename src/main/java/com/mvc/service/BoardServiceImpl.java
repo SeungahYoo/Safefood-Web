@@ -66,4 +66,7 @@ public class BoardServiceImpl implements BoardService {
 		return dao.login(id,pw);
 	}
 
+
+
+
 }
