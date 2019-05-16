@@ -15,8 +15,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.mvc.service.FoodService;
+import com.mvc.service.JJimService;
 import com.mvc.service.MemberService;
 import com.mvc.vo.Food;
+import com.mvc.vo.JJim;
 import com.mvc.vo.Member;
 @Controller
 public class MemberController {
@@ -24,6 +26,8 @@ public class MemberController {
     private MemberService memberService;
 	@Autowired
     private FoodService foodService;
+	@Autowired
+	private JJimService jjimService;
 
     /*public MemberController() {
         memberService = MemberServiceImpl.getInstance(); // singleton
@@ -149,11 +153,25 @@ public class MemberController {
         String id = (String) session.getAttribute("id");
         if (id != null) {
         	// service를 통한 식품 섭취 코드 추가
-            memberService.insertJJim(id, code); 
-            response.getWriter().println("1");
+        	List<JJim> a = jjimService.selectAll(id);
+            
+            String b = null;
+
+            for (int i = 0; i < a.size(); i++) {
+            	if(a.get(i).getCode().equals(code)) {
+            		b = "3";
+            		
+            		
+            		response.getWriter().println(b);
+            	}
+            }
+            if(b==null) {
+            	memberService.insertJJim(id, code); 
+            	response.getWriter().println("1");
+            }
         }
         // 사용자 정보가 세션에 존재하지 않을 경우
-        else
+        else 
             response.getWriter().println("2");
         
         

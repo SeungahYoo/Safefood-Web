@@ -341,6 +341,8 @@ html, body, header, .carousel {
 						alert(name + '이(가) 추가되었습니다');
 					} else if (result == 2) {
 						alert('로그인하세요!');
+					} else if (result == 3){
+						alert('이미 찜목록에 있습니다')
 					}
 				},
 				error : function(jqXhr, textStatus, errorThrown) {
