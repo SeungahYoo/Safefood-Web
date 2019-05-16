@@ -48,14 +48,26 @@ html, body, header, .carousel {
 	
 	
 	
+	
+	
+	
+	
 	:not
+	
+	
 	
 	
 		
 	
 	
+	
+	
 	(
 	.top-nav-collapse
+	
+	
+	
+	
 	
 	
 	
@@ -68,7 +80,15 @@ html, body, header, .carousel {
 	
 	
 	
+	
+	
+	
+	
 	:
+	
+	
+	
+	
 	
 	
 	
@@ -76,12 +96,20 @@ html, body, header, .carousel {
 	#929FBA
 	
 	
+	
+	
 		
 		
+	
+	
 	
 	
 	!
 	important
+	
+	
+	
+	
 	
 	
 	
@@ -155,23 +183,24 @@ html, body, header, .carousel {
 						<strong>Made by Dongik & Geuntae & Seungah.</strong>
 					</p>
 					<div class="md-form" style="margin: 0px auto; width: 500px">
-						<input type="search" id="mainSearch" class="form-control "	style="color: white; width: 500px;">
-						
-					<label for="mainSearch" class="active" style="color: white;">식품 검색</label>
-					
-					
-					
-					<!-- 
+						<input type="search" id="mainSearch" class="form-control "
+							style="color: white; width: 500px;"> <label
+							for="mainSearch" class="active" style="color: white;">식품
+							검색</label>
+
+
+
+						<!-- 
 						<input type="text" id="mainSearch" class="form-control"
 							style="color: white; width: 500px;"> <label
-							for="mainSearch" style="color: white;">식품 검색</label> --> <a
-							data-toggle="modal" data-target="#HistoryModal"
+							for="mainSearch" style="color: white;">식품 검색</label> -->
+						<a data-toggle="modal" data-target="#HistoryModal"
 							style="font-size: 13px; font-weight: bold; font-style: oblique;"
-							onclick="searchHistory()"> <i class="fas fa-list-ol"></i>
-							검색어 랭킹보기
+							onclick="searchHistory()"> <i class="fas fa-list-ol"></i> 검색어
+							랭킹보기
 						</a>
 					</div>
-					
+
 				</div>
 			</div>
 		</div>
@@ -181,7 +210,19 @@ html, body, header, .carousel {
 	<main>
 	<div class="container">
 		<!--Section: Main info-->
-		<section class="mt-5 wow fadeIn" id="mainList">
+		<section class="mt-5 wow fadeIn">
+			<div style="border:1px solid black; display: inline-block; width: 450px;">
+				<h4>Notice</h4>
+				공지사항을 여기에
+			</div>
+
+			<div style="display: inline-block; width: 450px;">
+				<h4>New Food !</h4>
+				안녕!
+			</div>
+		</section>
+		
+		<section class="mt-5 wow fadeIn" id="mainList" >
 			<c:forEach items="${mainList}" var="f">
 				<div class="row">
 					<div class="col-md-4 mb-2">
@@ -244,14 +285,18 @@ html, body, header, .carousel {
 	<!-- ########################## Modal part end ########################## -->
 
 	<!-- SCRIPTS -->
-<!-- JQuery -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-<!-- Bootstrap tooltips -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
-<!-- Bootstrap core JavaScript -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<!-- MDB core JavaScript -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.1/js/mdb.min.js"></script>
+	<!-- JQuery -->
+	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<!-- Bootstrap tooltips -->
+	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+	<!-- Bootstrap core JavaScript -->
+	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<!-- MDB core JavaScript -->
+	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.1/js/mdb.min.js"></script>
 	<!-- Initializations -->
 	<script type="text/javascript">
 		$(document).ready(function() {
