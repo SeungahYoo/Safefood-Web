@@ -57,13 +57,12 @@ public class FoodDAOImpl implements FoodDAO {
 	}
 
 	@Override
-<<<<<<< HEAD
 	public Food searchName(String name) {
 		return mapper.searchName(name);
-=======
+	}
+	
 	public List<String> searchHistoryList() {
 		return mapper.searchHistoryList();
->>>>>>> a9e2ad7f6964f23daa95c229351b4ce3ebf14953
 	}
 
 }

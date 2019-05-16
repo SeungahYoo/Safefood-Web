@@ -49,13 +49,13 @@ public class FoodServiceImpl implements FoodService{
 	}
 
 	@Override
-<<<<<<< HEAD
 	public Food searchName(String name) {
 		return dao.searchName(name);
-=======
+	}
+	
+	@Override
 	public List<String> searchHistoryList() {
 		return dao.searchHistoryList();
->>>>>>> a9e2ad7f6964f23daa95c229351b4ce3ebf14953
 	}
 
 }

@@ -155,20 +155,21 @@ html, body, header, .carousel {
 						<strong>Made by Dongik & Geuntae & Seungah.</strong>
 					</p>
 					<div class="md-form" style="margin: 0px auto; width: 500px">
-<<<<<<< HEAD
 						<input type="search" id="mainSearch" class="form-control "	style="color: white; width: 500px;">
 						
 					<label for="mainSearch" class="active" style="color: white;">식품 검색</label>
-=======
+					
+					
+					
+					<!-- 
 						<input type="text" id="mainSearch" class="form-control"
 							style="color: white; width: 500px;"> <label
-							for="mainSearch" style="color: white;">식품 검색</label> <a
+							for="mainSearch" style="color: white;">식품 검색</label> --> <a
 							data-toggle="modal" data-target="#HistoryModal"
 							style="font-size: 13px; font-weight: bold; font-style: oblique;"
 							onclick="searchHistory()"> <i class="fas fa-list-ol"></i>
 							검색어 랭킹보기
 						</a>
->>>>>>> a9e2ad7f6964f23daa95c229351b4ce3ebf14953
 					</div>
 					
 				</div>
