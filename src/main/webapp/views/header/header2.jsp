@@ -23,9 +23,10 @@
 
   <!-- Navbar -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
+   
     <!-- <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar"> -->
       <div class="container">
-
+		
         <!-- Brand -->
          <img class="image" alt="ssafy" src="resources/img/ssafy_logo.png" style="width:60px;heigh:60px">
          <a class="navbar-brand"
