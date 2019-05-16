@@ -12,9 +12,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.mvc.service.BoardService;
 import com.mvc.service.FoodService;
 import com.mvc.service.JJimService;
 import com.mvc.service.MemberService;
+import com.mvc.vo.Board;
 import com.mvc.vo.Food;
 import com.mvc.vo.FoodBean;
 import com.mvc.vo.JJim;
@@ -29,6 +31,8 @@ public class MainController {
     MemberService mservice;
 	@Autowired
 	JJimService jservice;
+	@Autowired
+	BoardService bservice;
 
 	/*public MainController() {
 		foodService = FoodServiceImpl.getInstance(); // singleton
@@ -39,6 +43,8 @@ public class MainController {
 	public String foodSearchAll(Model model) { // 전체 푸드리스트
 		// service를 통한 식품 정보 목록 추출
 		List<Food> list = service.searchAll();
+		List<Board> notice = bservice.selectAll();
+		model.addAttribute("noticeList",notice);
 		model.addAttribute("mainList", list);
 		return "main/index";
 	}
