@@ -48,7 +48,10 @@
 			style="display: none;" value="${totaln.total_natrium}" id="natrium">
 
 		<hr class="my-5">
-		<img src="https://i.pinimg.com/originals/54/f8/dc/54f8dcbb699a8e5c2004085220db73de.gif">
+		<button type="button" class="btn btn-light" data-toggle="modal"
+			data-target="#exerciseModal" style="float: right;">운동 루틴 보기</button>
+		<img
+			src="https://i.pinimg.com/originals/54/f8/dc/54f8dcbb699a8e5c2004085220db73de.gif">
 		<!--Section: Cards-->
 		<div class="container">
 
@@ -61,7 +64,8 @@
 						</div>
 						<div class="col-md-6 mb-4">
 							<h3 class="h3 mb-3">
-								<a href="/detail.mvc?code=${f.code}" style="color: #333333; font-weight: bold;">${f.name}</a>
+								<a href="/detail.mvc?code=${f.code}"
+									style="color: #333333; font-weight: bold;">${f.name}</a>
 							</h3>
 							<hr>
 							<p>${f.maker}</p>
@@ -84,7 +88,8 @@
 							</button>
 						</div>
 					</div>
-					<br><br>
+					<br>
+					<br>
 				</c:forEach>
 			</section>
 			<!--Section: Main info-->
@@ -155,8 +160,9 @@
     });
     }
   </script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-<script>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<script>
 $(document).ready(function(){
   $("button").mouseover(function(event){
     $(event.target).addClass("animated bounce");

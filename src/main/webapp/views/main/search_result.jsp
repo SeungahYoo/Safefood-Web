@@ -210,18 +210,6 @@ html, body, header, .carousel {
 	<main>
 	<div class="container">
 		<!--Section: Main info-->
-		<section class="mt-5 wow fadeIn">
-			<div style="border:1px solid black; display: inline-block; width: 450px;">
-				<h4>Notice</h4>
-				공지사항을 여기에
-			</div>
-
-			<div style="display: inline-block; width: 450px;">
-				<h4>New Food !</h4>
-				안녕!
-			</div>
-		</section>
-		
 		<section class="mt-5 wow fadeIn" id="mainList" >
 			<c:forEach items="${mainList}" var="f">
 				<div class="row">
