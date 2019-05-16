@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.mvc.mapper.MemberMapper;
 import com.mvc.vo.Member;
+import com.mvc.vo.Pair;
 
 @Repository
 // CRUD작업을 하는 DAO
@@ -82,7 +83,7 @@ public class MemberDAOImpl implements IMemberDAO {
 	}
 
 	@Override
-	public List<String> getFoods(String id) {
+	public List<Pair> getFoods(String id) {
 	
 		return mapper.getFoods(id);
 	}

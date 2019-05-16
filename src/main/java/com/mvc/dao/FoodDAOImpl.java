@@ -65,6 +65,21 @@ public class FoodDAOImpl implements FoodDAO {
 		return mapper.searchHistoryList();
 	}
 
+	@Override
+	public void delete(String code, String date) {
+		mapper.delete(code,date);
+	}
+
+	@Override
+	public FoodBean searchmyfood(String code) {
+		return mapper.searchmyfood(code);
+	}
+
+	@Override
+	public List<FoodBean> searchmyfoodall(String id) {
+		return mapper.searchmyfoodall(id);
+	}
+
 }
 /*
  * class MysqlAdapter { // url(jdbc url) // jdbc:protocol 이름, mysql : db이름,

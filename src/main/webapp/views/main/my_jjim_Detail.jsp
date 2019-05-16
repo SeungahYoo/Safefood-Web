@@ -28,7 +28,7 @@
 		<jsp:include page="../header/header2.jsp" />
 	</header>
 	<!--Main Navigation-->
-
+	<jsp:include page="NewFile.jsp"></jsp:include>
 	<!--Main layout-->
 	<main class="mt-5 pt-5">
 	<div class="container">
@@ -48,7 +48,8 @@
 			style="display: none;" value="${totaln.total_natrium}" id="natrium">
 
 		<hr class="my-5">
-
+		<button type="button" class="btn btn-light" data-toggle="modal"
+            data-target="#fullHeightModalRight" style="float: right;">운동 루틴 보기</button>
 		<!--Section: Cards-->
 		<div class="container">
 
@@ -97,7 +98,7 @@
 	</div>
 	</main>
 	<!--Main layout-->
-
+	<jsp:include page="exercise.jsp"></jsp:include>
 	<jsp:include page="../header/footer.jsp"></jsp:include>
 	<!-- ########################## Modal part start ########################## -->
 	<jsp:include page="register_modal.jsp"></jsp:include><!-- 회원가입 모달 -->
@@ -155,7 +156,17 @@
     });
     }
   </script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").mouseover(function(event){
+    $(event.target).addClass("animated bounce");
+  });
+  $("button").mouseout(function(event){
+	  $(event.target).removeClass("animated bounce");
+  });
+});
+</script>
 
 
 

@@ -58,4 +58,19 @@ public class FoodServiceImpl implements FoodService{
 		return dao.searchHistoryList();
 	}
 
+	@Override
+	public void delete(String code, String date) {
+		dao.delete(code,date);
+	}
+
+	@Override
+	public FoodBean searchmyfood(String code) {
+		return dao.searchmyfood(code);
+	}
+
+	@Override
+	public List<FoodBean> searchmyfoodall(String id) {
+		return dao.searchmyfoodall(id);
+	}
+
 }

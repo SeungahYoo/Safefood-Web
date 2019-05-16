@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.mvc.vo.Member;
+import com.mvc.vo.Pair;
 //client(MemberController)를 위한 서비스 제공 메소드가 표시되는 인터페이스
 //MemberController)를 위한 서비스 제공 메소드가 표시되는 인터페이스
 //MemberController가 이용가능한 메소드 목록
@@ -73,7 +74,7 @@ public interface MemberService {
      * @param id 회원 아이디
      * @return 회원 섭취 식품 코드 목록
      */
-    public List<String> getFoods(String id);
+    public List<Pair> getFoods(String id);
     
     public void insertJJim (String id, String code);
     

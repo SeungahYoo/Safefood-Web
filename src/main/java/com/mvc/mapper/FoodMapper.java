@@ -56,5 +56,11 @@ public interface FoodMapper {
 	public List<String> searchHistoryList();
 	
 	public void insertSearchHistory(String word);
+	
+	public void delete(String code, String date);
+	
+	public FoodBean searchmyfood(String code);
+	
+	public List<FoodBean> searchmyfoodall(String id);
 
 }
