@@ -180,7 +180,7 @@ html, body, header, .carousel {
 					</p>
 
 					<p class="mb-4 d-none d-md-block">
-						<strong >Made by Dongik & Geuntae & Seungah.</strong>
+						<strong>Made by Dongik & Geuntae & Seungah.</strong>
 					</p>
 					<div class="md-form" style="margin: 0px auto; width: 500px">
 						<input type="search" id="mainSearch" class="form-control "
@@ -188,7 +188,7 @@ html, body, header, .carousel {
 							for="mainSearch" class="active" style="color: white;">식품
 							검색</label>
 
-	
+
 
 						<!-- 
 						<input type="text" id="mainSearch" class="form-control"
@@ -226,12 +226,12 @@ html, body, header, .carousel {
 			<c:forEach items="${mainList}" var="f">
 				<div class="row">
 					<div class="col-md-4 mb-2">
-						<img src="resources/${f.image}" class="img-fluid z-depth-1-half" >
+						<img src="resources/${f.image}" class="img-fluid z-depth-1-half">
 					</div>
 					<div class="col-md-6 mb-4">
 						<h3 class="h3 mb-3">
 							<a href="/detail.mvc?code=${f.code}"
-								style="color: #333333; font-weight: bold;" >${f.name}</a>
+								style="color: #333333; font-weight: bold;">${f.name}</a>
 						</h3>
 						<hr>
 						<p>${f.maker}</p>
@@ -248,7 +248,7 @@ html, body, header, .carousel {
 							<i class="fas fa-download ml-1"></i>찜
 						</a>
 						 --%>
-						<button type="button" class="btn btn-primary px-3 "
+						<button type="button" class="btn btn-primary px-3"
 							onclick="addFood(${f.code},'${f.name}')">
 							<i class="fas fa-plus"></i>&nbsp;&nbsp;추가
 						</button>
@@ -352,17 +352,6 @@ html, body, header, .carousel {
 		}
 		
 	</script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-  $("button").mouseover(function(event){
-    $(event.target).addClass("animated bounce");
-  });
-  $("button").mouseout(function(event){
-	  $(event.target).removeClass("animated bounce");
-  });
-});
-</script>
 </body>
 
 </html>

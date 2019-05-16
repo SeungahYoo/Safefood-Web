@@ -41,11 +41,24 @@
 		order by name
 	</select>
 
-	<select id="search" resultMap="FoodResult"
-		parameterType="String">
+	<select id="search" resultMap="FoodResult" parameterType="String">
 		select * from safefood.food where code=#{code}
 	</select>
-
+	
+	<select id="searchmyfood" resultType="FoodBean"
+		parameterType="String">
+		select * from safefood.member_foods where code=#{code}
+	</select>
+	
+	<select id="searchmyfoodall" resultType="FoodBean"
+		parameterType="String">
+		select * from safefood.member_foods where id=#{id}
+	</select>
+	
+	<delete id="delete" parameterType="String">
+		delete from safefood.member_foods where code = #{code} and date= #{date}
+	</delete>
+	
 	<select id="search2" resultMap="FoodResult"
 		parameterType="String">
 		select * from safefood.food

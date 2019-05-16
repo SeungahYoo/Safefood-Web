@@ -19,6 +19,7 @@ import com.mvc.vo.Food;
 import com.mvc.vo.FoodBean;
 import com.mvc.vo.JJim;
 import com.mvc.vo.Member;
+import com.mvc.vo.Pair;
 
 @Controller
 public class MainController {
@@ -56,7 +57,7 @@ public class MainController {
 		List<Food> list = service.search("", word);
 		model.addAttribute("mainList", list);
 		model.addAttribute("type", "search");
-		return "main/index";
+		return "main/search_result";
 	}
 	
 	@RequestMapping(value = "/searchHistory.mvc", method = RequestMethod.GET)
@@ -98,14 +99,19 @@ public class MainController {
         // 사용자 정보가 존재할 경우
         if (id != null) {
         	// 사용자 섭취 목록 반환
-        	List<String> codes = mservice.getFoods(id);	
+        	List<Pair> codeDates = mservice.getFoods(id);	
         	// 섭취 목록 코드에 따라 Food 정보 목록 추출
         	List<Food> list = new ArrayList<Food>();
-        	for(String code : codes) {
-        		list.add(service.search(code));
+        	List<FoodBean> myfood = service.searchmyfoodall(id);
+        	List<String> datesList = new ArrayList<String>();
+        	for(Pair codeDate : codeDates) {
+        		list.add(service.search(codeDate.getFirst()));
+        		datesList.add(codeDate.getSecond());
         	}
+        	
         	// 사용자가 추가한 식품정보 목록 세팅
         	model.addAttribute("mainList", list);
+        	model.addAttribute("datesList", datesList);
     		return "main/myfoodlist";
         }
 		return "main/index";
@@ -203,6 +209,14 @@ public class MainController {
 		}
 		return "fooddetail/detail";
 	}
-
+	@RequestMapping(value = "/deleteMyFood.mvc", method = RequestMethod.GET)
+	public String deleteMyFood(String code, String date) {
+		
+//		date = service.searchmyfood(code).getDate();
+		System.out.println(date.replace("%20", " "));
+		service.delete(code, date.replace("%20", " "));
+		return"redirect:/myfoodlist.mvc";
+	}
+	
 	
 }

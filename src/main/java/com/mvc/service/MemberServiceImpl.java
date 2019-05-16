@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.mvc.dao.IMemberDAO;
 import com.mvc.vo.Member;
+import com.mvc.vo.Pair;
 @Service("memberservice")
 public class MemberServiceImpl implements MemberService{
    @Autowired
@@ -70,7 +71,7 @@ public class MemberServiceImpl implements MemberService{
     }
 
     @Override
-    public List<String> getFoods(String id) {
+    public List<Pair> getFoods(String id) {
         return dao.getFoods(id);
     }
 

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.mvc.vo.Member;
+import com.mvc.vo.Pair;
 
 public interface MemberMapper {
 	
@@ -19,7 +20,7 @@ public interface MemberMapper {
     public ArrayList<Member> findByName(String name);
     public ArrayList<Member> findByAddress(String address);
     public void insertFood (String id, String code);
-    public ArrayList<String> getFoods(String id);
+    public ArrayList<Pair> getFoods(String id);
     public void insertJJim (String id, String code);
     public List<String> getJJim(String id);
 

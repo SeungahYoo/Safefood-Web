@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.mvc.vo.Member;
+import com.mvc.vo.Pair;
 
 public interface IMemberDAO {
 	/**
@@ -69,7 +70,7 @@ public interface IMemberDAO {
      * 회원 아이디와 일치하는 회원 섭취 식품 코드 목록 반환
      * @param id 회원 아이디
      */
-    public List<String> getFoods(String id);
+    public List<Pair> getFoods(String id);
     
     public void insertJJim (String id, String code);
     

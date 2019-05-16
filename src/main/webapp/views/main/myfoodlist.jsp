@@ -42,7 +42,7 @@
 
 			<!--Section: Main info-->
 			<section class="mt-5 wow fadeIn" id="mainList">
-				<c:forEach items="${mainList}" var="f">
+				<c:forEach items="${mainList}" var="f" varStatus="stat">
 					<div class="row">
 						<div class="col-md-4 mb-2">
 							<img src="resources/${f.image}" class="img-fluid z-depth-1-half">
@@ -63,8 +63,8 @@
 						</a> --%>
 
 							<button type="button" class="btn btn-danger px-3"
-								onclick="addFood(${f.code},'${f.name}')">
-								<i class="fas fa-minus"></i>&nbsp;&nbsp;삭제
+								>
+								<i class="fas fa-minus"></i>&nbsp;&nbsp;<a style="text-decoration: none;color: white;" href="deleteMyFood.mvc?code=${f.code }&date=${datesList[stat.index]}">삭제</a>
 							</button>
 							<button type="button" class="btn btn-success px-3"
 								onclick="jjimFood(${f.code},'${f.name}')" @click="allJJimList">
@@ -129,6 +129,17 @@
 		});
 	}
   </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").mouseover(function(event){
+    $(event.target).addClass("animated bounce");
+  });
+  $("button").mouseout(function(event){
+	  $(event.target).removeClass("animated bounce");
+  });
+});
+</script>
 </body>
 
 </html>

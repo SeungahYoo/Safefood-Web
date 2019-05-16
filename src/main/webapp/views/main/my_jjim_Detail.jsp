@@ -48,7 +48,7 @@
 			style="display: none;" value="${totaln.total_natrium}" id="natrium">
 
 		<hr class="my-5">
-
+		<img src="https://i.pinimg.com/originals/54/f8/dc/54f8dcbb699a8e5c2004085220db73de.gif">
 		<!--Section: Cards-->
 		<div class="container">
 
@@ -155,7 +155,17 @@
     });
     }
   </script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").mouseover(function(event){
+    $(event.target).addClass("animated bounce");
+  });
+  $("button").mouseout(function(event){
+	  $(event.target).removeClass("animated bounce");
+  });
+});
+</script>
 
 
 

@@ -51,8 +51,8 @@
   <insert id="insertFood" parameterType="String">
   	insert into safefood.member_foods (id,code,date) values(#{param1},#{param2},sysdate())
   </insert>
-  <select id="getFoods" resultType="String" parameterType="String">
-  	select code from safefood.member_foods where id=#{id}
+  <select id="getFoods" resultType="Pair" parameterType="String">
+  	select code first, date second from safefood.member_foods where id=#{id}
   </select>
   <insert id="insertJJim" parameterType="String">
   	insert into safefood.member_jjim (id,code,date) values(#{param1},#{param2},sysdate())

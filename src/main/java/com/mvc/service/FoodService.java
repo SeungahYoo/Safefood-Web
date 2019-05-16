@@ -37,4 +37,10 @@ public interface FoodService {
 	public Food searchName(String name);
 	
 	public List<String> searchHistoryList();
+	
+	public void delete(String code, String date);
+	
+	public FoodBean searchmyfood(String code);
+	
+	public List<FoodBean> searchmyfoodall(String id);
 }
