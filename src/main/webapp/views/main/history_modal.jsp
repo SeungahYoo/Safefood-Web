@@ -15,7 +15,7 @@
 <body>
 	<div class="modal fade" id="HistoryModal" tabindex="-1" role="dialog"
 		aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
+		<div class="modal-dialog modal-sm" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
 					<h5 class="modal-title" id="exampleModalLabel">검색어 랭킹</h5>
@@ -58,7 +58,7 @@
 					console.log(result);
 					var ret = "";
 					for (i = 0; i < result.length; i++) {
-						ret += "<tr><td>"+(i+1)+"</td><td>" + "<a href=\"http://localhost:8080/foodSearch.mvc?word="+result[i]+"\">"+result[i] +"</a>"+ "</td></tr>"
+						ret += "<tr><td><span class=\"badge badge-light\">"+(i+1)+"</span></td><td>" + "<a href=\"http://localhost:8080/foodSearch.mvc?word="+result[i]+"\">"+result[i] +"</a>"+ "</td></tr>"
 					}
 					ret += ""
 					$("#areaValue").html(ret);

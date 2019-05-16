@@ -46,12 +46,18 @@ html, body, header, .carousel {
 	.navbar
 	
 	
+	
+	
 	:not
+	
 	
 		
 	
+	
 	(
 	.top-nav-collapse
+	
+	
 	
 	
 	
@@ -60,16 +66,24 @@ html, body, header, .carousel {
 	background
 	
 	
+	
+	
 	:
+	
+	
 	
 	
 	#929FBA
 	
+	
 		
 		
 	
+	
 	!
 	important
+	
+	
 	
 	
 	;
@@ -143,11 +157,12 @@ html, body, header, .carousel {
 					<div class="md-form" style="margin: 0px auto; width: 500px">
 						<input type="text" id="mainSearch" class="form-control"
 							style="color: white; width: 500px;"> <label
-							for="mainSearch" style="color: white;">식품 검색</label>
-
-
-						<a data-toggle="modal"
-							data-target="#HistoryModal" style="font-size: 6px;" onclick="searchHistory()" >검색어 랭킹보기</a>
+							for="mainSearch" style="color: white;">식품 검색</label> <a
+							data-toggle="modal" data-target="#HistoryModal"
+							style="font-size: 13px; font-weight: bold; font-style: oblique;"
+							onclick="searchHistory()"> <i class="fas fa-list-ol"></i>
+							검색어 랭킹보기
+						</a>
 					</div>
 
 				</div>
@@ -167,22 +182,37 @@ html, body, header, .carousel {
 					</div>
 					<div class="col-md-6 mb-4">
 						<h3 class="h3 mb-3">
-							<a href="/detail.mvc?code=${f.code}">${f.name}</a>
+							<a href="/detail.mvc?code=${f.code}"
+								style="color: #333333; font-weight: bold;">${f.name}</a>
 						</h3>
 						<hr>
 						<p>${f.maker}</p>
 						<hr>
 						<p>${f.material}</p>
 						<hr>
-						<a target="_black" class="addFood btn btn-blue btn-md"
+						<%-- <a target="_black" class="addFood btn btn-blue btn-md"
 							onclick="addFood(${f.code},'${f.name}')"> <i
 							class="fas fa-download ml-1"></i>추가
-						</a> <a target="_black" class=" btn btn-blue btn-md"
+						</a> 
+						 --%>
+						<%-- <a target="_black" class=" btn btn-blue btn-md"
 							onclick="jjimFood(${f.code},'${f.name}')" @click="allJJimList">
 							<i class="fas fa-download ml-1"></i>찜
 						</a>
+						 --%>
+						<button type="button" class="btn btn-primary px-3"
+							onclick="addFood(${f.code},'${f.name}')">
+							<i class="fas fa-plus"></i>&nbsp;&nbsp;추가
+						</button>
+						<button type="button" class="btn btn-success px-3"
+							onclick="jjimFood(${f.code},'${f.name}')" @click="allJJimList">
+							<i class="fas fa-star"></i>
+						</button>
+
 					</div>
 				</div>
+				<br>
+				<br>
 			</c:forEach>
 		</section>
 		<!--Section: Main info-->

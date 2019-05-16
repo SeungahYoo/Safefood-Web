@@ -27,7 +27,7 @@
 
 	<!--Main layout-->
 	<main class="mt-5 pt-4">
-	<div class="container dark-grey-text mt-5">
+	<div class="container dark-grey-text mt-5" style="margin-bottom: 200px;">
 		<h2>글쓰기</h2>
 
 		<form action="boardInsert.mvc" method="post">

@@ -92,13 +92,13 @@ Let our voices be heard by the key people involved in the SSAFY legislation proc
 
         <ul class="list-unstyled">
           <li>
-            <a target="_balnk" href="https://www.google.com/search?rlz=1C1CHBD_koKR827KR827&ei=W37aXM2MN5PVmAW3pa6YDA&q=%EB%B0%95%EB%8F%99%EC%9D%B5&oq=%EB%B0%95%EB%8F%99%EC%9D%B5&gs_l=psy-ab.3..0j0i30.217380.219712..219873...5.0..0.124.1496.0j14......0....1..gws-wiz.....6..0i131j35i39j35i39i19j0i10j0i10i42j0i3.LmKGaiwWdL0">D.I Park</a>
+            <a target="_balnk" href="https://github.com/dongik-park">D.I Park</a>
           </li>
           <li>
-            <a target="_balnk" href="https://www.google.com/search?rlz=1C1CHBD_koKR827KR827&ei=OH_aXJT9D9mVr7wPgN2_yAw&q=%EA%B9%80%EA%B7%BC%ED%83%9C&oq=%EA%B9%80%EA%B7%BC%ED%83%9C&gs_l=psy-ab.3..0l10.7712.8385..8611...0.0..0.138.936.0j8......0....1..gws-wiz.......0i131.lOxd0qV1HZY">G.T Kim</a>
+            <a target="_balnk" href="https://github.com/Geuntae">G.T Kim</a>
           </li>
           <li>
-            <a target="_balnk" href="https://seungahyoo.tistory.com">S.A Yoo</a>
+            <a target="_balnk" href="https://github.com/seungahyoo">S.A Yoo</a>
           </li>
    
         </ul>

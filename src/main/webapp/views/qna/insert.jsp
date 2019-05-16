@@ -17,7 +17,7 @@
 </head>
 <body>
 <template id="inserttemplate"> <main class="mt-5 pt-4">
-	<div class="container dark-grey-text mt-5">
+	<div class="container dark-grey-text mt-5" style="margin-bottom: 200px;">
 		<h2>질문하기</h2>
 
 
@@ -29,7 +29,7 @@
 			</tr>
 			<tr>
 				<td>Title :</td>
-				<td colspan="3"><input type="text" name="title" v-model="title"></td>
+				<td colspan="3"><input type="text" name="title" v-model="title" style="width: 600px;"></td>
 			</tr>
 			<tr>
 				<td>Content:</td>
