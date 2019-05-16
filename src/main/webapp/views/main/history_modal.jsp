@@ -57,7 +57,7 @@
 				success : function(result) {
 					console.log(result);
 					var ret = "";
-					for (i = 0; i < result.length; i++) {
+					for (i = 0; i < 5; i++) {
 						ret += "<tr><td><span class=\"badge badge-light\">"+(i+1)+"</span></td><td>" + "<a href=\"http://localhost:8080/foodSearch.mvc?word="+result[i]+"\">"+result[i] +"</a>"+ "</td></tr>"
 					}
 					ret += ""
