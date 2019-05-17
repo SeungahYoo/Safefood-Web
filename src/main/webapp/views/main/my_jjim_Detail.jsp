@@ -28,7 +28,7 @@
 		<jsp:include page="../header/header2.jsp" />
 	</header>
 	<!--Main Navigation-->
-
+	<jsp:include page="NewFile.jsp"></jsp:include>
 	<!--Main layout-->
 	<main class="mt-5 pt-5">
 	<div class="container">
@@ -49,9 +49,13 @@
 
 		<hr class="my-5">
 		<button type="button" class="btn btn-light" data-toggle="modal"
+<<<<<<< HEAD
 			data-target="#exerciseModal" style="float: right;">운동 루틴 보기</button>
 		<img
 			src="https://i.pinimg.com/originals/54/f8/dc/54f8dcbb699a8e5c2004085220db73de.gif">
+=======
+            data-target="#fullHeightModalRight" style="float: right;">운동 루틴 보기</button>
+>>>>>>> master
 		<!--Section: Cards-->
 		<div class="container">
 
@@ -102,7 +106,7 @@
 	</div>
 	</main>
 	<!--Main layout-->
-
+	<jsp:include page="exercise.jsp"></jsp:include>
 	<jsp:include page="../header/footer.jsp"></jsp:include>
 	<!-- ########################## Modal part start ########################## -->
 	<jsp:include page="register_modal.jsp"></jsp:include><!-- 회원가입 모달 -->
