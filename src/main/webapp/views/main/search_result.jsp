@@ -210,8 +210,11 @@ html, body, header, .carousel {
 	<main>
 	<div class="container">
 		<!--Section: Main info-->
+<<<<<<< HEAD
 
 		
+=======
+>>>>>>> origin/master
 		<section class="mt-5 wow fadeIn" id="mainList" >
 			<c:forEach items="${mainList}" var="f">
 				<div class="row">
