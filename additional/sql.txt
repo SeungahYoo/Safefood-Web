@@ -1,0 +1,98 @@
+create table search_history(
+	word varchar(20) not null,
+	cnt int(11) NOT NULL DEFAULT 1
+);
+
+alter table search_history add unique(word);
+
+INSERT INTO search_history (word) VALUES ('메로나') ON DUPLICATE KEY UPDATE word='메로나', cnt=cnt+1;
+INSERT INTO search_history (word) VALUES ('진라면') ON DUPLICATE KEY UPDATE word='진라면', cnt=cnt+1;
+
+CREATE TABLE `allergy` (
+  `ACODE` varchar(20) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `NAME` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`ACODE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin
+
+
+CREATE TABLE `food` (
+  `CODE` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `NAME` varchar(100) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `MAKER` varchar(100) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `MATERIAL` varchar(500) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `IMAGE` varchar(300) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `SUPPORTPEREAT` double DEFAULT NULL,
+  `CALORY` double DEFAULT NULL,
+  `CARBO` double DEFAULT NULL,
+  `PROTEIN` double DEFAULT NULL,
+  `FAT` double DEFAULT NULL,
+  `SUGAR` double DEFAULT NULL,
+  `NATRIUM` double DEFAULT NULL,
+  `CHOLE` double DEFAULT NULL,
+  `FATTYACID` double DEFAULT NULL,
+  `TRANSFAT` double DEFAULT NULL,
+  PRIMARY KEY (`CODE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin
+
+CREATE TABLE `food_hits` (
+  `code` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `hits` int(11) DEFAULT NULL,
+  PRIMARY KEY (`code`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin
+
+CREATE TABLE `member` (
+  `ID` varchar(20) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `NAME` varchar(20) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `ADDRESS` varchar(20) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `TEL` varchar(40) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `PASSWORD` varchar(100) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `RDATE` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin
+
+CREATE TABLE `member_allergies` (
+  `ID` varchar(20) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `ACODE` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `DATE` datetime DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin
+
+CREATE TABLE `member_foods` (
+  `ID` varchar(20) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `CODE` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `DATE` datetime DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin
+
+CREATE TABLE `member_jjim` (
+  `ID` varchar(20) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `CODE` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `DATE` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`ID`,`CODE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin
+
+CREATE TABLE `member_jjim` (
+  `ID` varchar(20) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `CODE` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `DATE` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`ID`,`CODE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin
+
+CREATE TABLE `qna` (
+  `num` int(11) NOT NULL AUTO_INCREMENT,
+  `id` varchar(20) COLLATE utf8_bin DEFAULT NULL,
+  `wdate` datetime NOT NULL,
+  `title` varchar(40) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `question` varchar(100) COLLATE utf8_bin DEFAULT NULL,
+  `answer` varchar(100) COLLATE utf8_bin DEFAULT NULL,
+  PRIMARY KEY (`num`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_bin
+
+CREATE TABLE `board` (
+  `NUM` int(11) NOT NULL AUTO_INCREMENT,
+  `PASS` varchar(20) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `NAME` varchar(20) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `WDATE` datetime NOT NULL,
+  `TITLE` varchar(40) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `CONTENT` varchar(100) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `COUNT` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`NUM`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_bin
