@@ -19,6 +19,7 @@
 <link href="resources/css/mdb.min.css" rel="stylesheet">
 <!-- Your custom styles (optional) -->
 <link href="resources/css/style.min.css" rel="stylesheet">
+<script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
 </head>
 
 <body>
@@ -47,9 +48,9 @@
 			value="${totaln.total_sugar}" id="sugar"> <input type="text"
 			style="display: none;" value="${totaln.total_natrium}" id="natrium">
 
-		<hr class="my-5">
+		<hr class="my-5">	
 		<button type="button" class="btn btn-light" data-toggle="modal"
-            data-target="#fullHeightModalRight" style="float: right;">운동 루틴 보기</button>
+            data-target="#exerciseModal" style="float: right;">운동 루틴 보기</button>
 		<!--Section: Cards-->
 		<div class="container">
 
@@ -111,7 +112,6 @@
 	<!-- ########################## Modal part end ########################## -->
 	<!-- SCRIPTS -->
 	<!-- JQuery -->
-	<script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
 	<!-- Bootstrap tooltips -->
 	<script type="text/javascript" src="/js/popper.min.js"></script>
 	<!-- Bootstrap core JavaScript -->
